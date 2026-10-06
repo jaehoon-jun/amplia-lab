@@ -154,7 +154,10 @@ p { margin: 0; }
 .nav__inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 
 .brand { display: inline-flex; align-items: center; gap: 10px; }
-.brand__mark { width: 30px; height: 30px; color: var(--blue); }
+.brand__mark { width: 30px; height: 30px; color: var(--blue); display: block; object-fit: contain; }
+.brand__mark--white { display: none; }
+.nav:not(.is-scrolled):not(.is-open) .brand__mark--color { display: none; }
+.nav:not(.is-scrolled):not(.is-open) .brand__mark--white { display: block; }
 .brand__name { font-weight: 800; font-size: 19px; letter-spacing: .02em; }
 
 .menu { display: flex; align-items: center; gap: 2px; }
@@ -289,6 +292,9 @@ section { position: relative; }
   line-height: .9;
   color: var(--hero-ink);
   margin-left: -0.04em;
+  /* room for the last glyph's overhang so background-clip:text doesn't cut it off */
+  padding-right: 0.08em;
+  margin-right: -0.08em;
   /* a soft band of pale-blue light glides across the word (fit-content so it spans the word, not the row) */
   width: fit-content;
   background: linear-gradient(100deg, #fff 0%, #fff 40%, #cfe3f7 46%, #fff 50%, #9fc0e0 54%, #fff 60%, #fff 100%);
@@ -317,6 +323,9 @@ section { position: relative; }
 .hero__lead-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--hero-accent); box-shadow: 0 0 0 3px rgba(159, 192, 224, .22); flex: none; }
 .hero__lead-sep { width: 1px; height: 12px; background: rgba(255, 255, 255, .3); flex: none; }
 .hero__desc { margin-top: 24px; max-width: 640px; font-size: clamp(16px, 1.5vw, 18px); line-height: 1.7; color: var(--hero-soft); }
+.hero__sub { margin-top: 18px; max-width: 620px; font-size: clamp(13px, 1.1vw, 15px); line-height: 1.65; color: var(--hero-soft); }
+.hero__sub a { color: #fff; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255, 255, 255, .45); }
+.hero__sub a:hover { text-decoration-color: #fff; }
 
 /* Sub-page header (generated pages): short blue band with breadcrumb + title */
 .hero--page { padding: calc(var(--nav-h) + clamp(36px, 5vw, 56px)) 0 clamp(40px, 5vw, 56px); }
@@ -781,7 +790,7 @@ body[data-page="research"] .projects > div:first-child .tag--slate { color: var(
   background: radial-gradient(closest-side, rgba(46, 90, 134, .08), transparent 70%);
   pointer-events: none;
 }
-.join__inner { position: relative; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 48px; align-items: end; }
+.join__inner { position: relative; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 48px; align-items: center; }
 .join h2 { font-size: clamp(34px, 5vw, 60px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.08; }
 .join h2 span { color: var(--blue); }
 .join p { margin-top: 22px; color: var(--muted); font-size: 17px; max-width: 600px; }
@@ -841,7 +850,7 @@ body[data-page="research"] .projects > div:first-child .tag--slate { color: var(
 .footer { background: var(--blue-deep); color: #fff; margin-top: 0; --logo-slash: var(--blue-deep); }
 .footer__main { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 19px 0 20px; text-align: center; }
 .footer__brand { display: inline-flex; align-items: center; gap: 12px; color: #fff; }
-.footer__mark { width: 40px; height: 40px; color: #fff; }
+.footer__mark { width: 40px; height: 40px; color: #fff; display: block; object-fit: contain; }
 .footer__name { font-weight: 800; font-size: 26px; letter-spacing: .02em; }
 .footer__sub { text-align: left; font-size: 12.5px; line-height: 1.35; color: #c9d8e8; border-left: 1px solid rgba(255, 255, 255, .25); padding-left: 12px; }
 .footer__copy { margin: 0; line-height: 1.2; font-family: var(--label); font-variant-numeric: tabular-nums; font-size: 13px; color: #b9cadb; }

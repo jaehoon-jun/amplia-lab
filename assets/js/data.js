@@ -565,6 +565,11 @@ window.AMPLIA = {
      term: "YYYY Season" — 연도별로 묶여 표시됩니다 (최신 학기가 위)
      code: 학수번호 · grad: 대학원 과목 · coteach: 공동강의 · host: 타 기관 강의        */
   lectures: [
+    { term: "2026 Fall", courses: [
+        { title: "Electronic Circuits 1" },
+        { title: "Design of Analog Integrated Circuits" },
+        { title: "Intelligent Semiconductors and Chiplets", grad: true }
+    ] },
     { term: "2026 Summer", courses: [
         { title: "VLSI Design", host: "Kangwon University, Korea" }
     ] },

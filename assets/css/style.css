@@ -453,13 +453,12 @@ body[data-page="research"] .projects > div:first-child .tag--slate { color: var(
 .theme:hover { transform: translateY(-6px); box-shadow: 0 2px 4px rgba(15, 27, 42, .06), 0 24px 44px -20px rgba(15, 27, 42, .45); }
 .theme__head { position: relative; min-height: 200px; padding: 24px 26px 26px; display: flex; flex-direction: column; color: #fff; background: linear-gradient(140deg, var(--c) 0%, var(--cd) 100%); }
 .theme__head::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 100% 0%, rgba(255, 255, 255, .18), transparent 55%); pointer-events: none; }
-.theme__num { font-size: 72px; font-weight: 800; line-height: .9; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; color: rgba(255, 255, 255, .92); }
-.theme__num::after { content: ""; display: block; width: 36px; height: 3px; margin-top: 16px; background: rgba(255, 255, 255, .75); transition: width .35s var(--ease); }
-.theme:hover .theme__num::after { width: 56px; }
-.theme__head h4 { margin-top: auto; padding-top: 24px; font-size: 22px; font-weight: 700; line-height: 1.25; letter-spacing: -0.02em; }
+.theme__num { position: absolute; top: -34px; right: -10px; font-family: "Cormorant Garamond", Georgia, serif; font-size: 240px; font-style: italic; font-weight: 300; line-height: 1; letter-spacing: -0.02em; font-variant-numeric: lining-nums; color: rgba(255, 255, 255, .08); pointer-events: none; user-select: none; transition: color .35s var(--ease); }
+.theme:hover .theme__num { color: rgba(255, 255, 255, .13); }
+.theme__head h4 { position: relative; z-index: 1; margin-top: auto; padding-top: 24px; font-size: 27px; font-weight: 700; line-height: 1.25; letter-spacing: -0.02em; }
 .theme__body { position: relative; flex: 1; padding: 24px 26px 110px; }
 .theme__body ul { position: relative; z-index: 1; margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
-.theme__body li { position: relative; padding-left: 18px; font-size: 14.5px; line-height: 1.5; color: var(--ink-2); }
+.theme__body li { position: relative; padding-left: 18px; font-size: 15.5px; line-height: 1.5; color: var(--ink-2); }
 .theme__body li::before { content: ""; position: absolute; left: 0; top: .6em; width: 7px; height: 7px; border-radius: 2px; background: var(--c); }
 .theme__icon { position: absolute; right: 18px; bottom: 16px; width: 96px; height: 96px; color: var(--c); opacity: .14; transition: opacity .35s var(--ease), transform .35s var(--ease); }
 .theme:hover .theme__icon { opacity: .35; transform: rotate(-6deg) scale(1.05); }
@@ -468,6 +467,8 @@ body[data-page="research"] .projects > div:first-child .tag--slate { color: var(
   .themes { grid-template-columns: 1fr; }
   .theme { min-height: 0; }
   .theme__head { min-height: 170px; }
+  .theme__head h4 { font-size: 24px; }
+  .theme__num { font-size: 180px; }
 }
 
 .projects { margin-top: clamp(64px, 8vw, 96px); display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 48px; }

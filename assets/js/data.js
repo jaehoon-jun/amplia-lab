@@ -598,7 +598,7 @@ window.AMPLIA = {
         { title: "Electronic Circuits 2" },
         { title: "Design of Mixed-Signal Integrated Circuits" },
         { title: "Semiconductor Industry Expert Seminar" },
-        { title: "Challenges and Solutions in Semiconductor Industry" }
+        { title: "Challenges and Solutions in Semiconductor Industry", coteach: true }
     ] },
     { term: "2025 Fall", courses: [
         { title: "Electronic Circuits 1" },

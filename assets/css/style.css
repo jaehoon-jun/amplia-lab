@@ -327,6 +327,8 @@ section { position: relative; }
 .hero__sub { margin-top: 18px; max-width: 620px; font-size: clamp(13px, 1.1vw, 15px); line-height: 1.65; color: var(--hero-soft); }
 .hero__sub a { color: #fff; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255, 255, 255, .45); }
 .hero__sub a:hover { text-decoration-color: #fff; }
+.hero__mail { white-space: nowrap; }
+@media (max-width: 600px) { .hero__br { display: none; } }
 
 /* Sub-page header (generated pages): short blue band with breadcrumb + title */
 .hero--page { padding: calc(var(--nav-h) + clamp(36px, 5vw, 56px)) 0 clamp(40px, 5vw, 56px); }

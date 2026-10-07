@@ -116,7 +116,8 @@
     journal:    { label: "Journal",    short: "J", cls: "tag--blue" },
     conference: { label: "Conference", short: "C", cls: "tag--teal" },
     patent:     { label: "Patent",     short: "P", cls: "tag--slate" },
-    talk:       { label: "Talk",       short: "T", cls: "tag--line" }
+    talk:       { label: "Talk",       short: "T", cls: "tag--line" },
+    award:      { label: "Award",      short: "A", cls: "tag--amber" }
   };
   let pubFilter = "all";
 
@@ -129,18 +130,19 @@
     return html.replace(/\{([^}]+)\}/g, "<b>$1</b>").replace(/†/g, "<sup>†</sup>");
   }
 
-  const TYPE_ORDER = ["journal", "conference", "patent", "talk"];
-  const TYPE_TITLE = { journal: "Journals", conference: "Conferences", patent: "Patents", talk: "Talks" };
+  const TYPE_ORDER = ["journal", "conference", "patent", "talk", "award"];
+  const TYPE_TITLE = { journal: "Journals", conference: "Conferences", patent: "Patents", talk: "Talks", award: "Awards" };
   const cats = (type) => (D.pubCategories && D.pubCategories[type]) || [];
   const catRank = (p) => (p.category ? cats(p.type).indexOf(p.category) + 1 : 0);
-  // numbering series: books (B), domestic conferences (D), each patent category (P), else J / C / T
+  // numbering series: books (B), domestic conferences (D), each patent category (P), else J / C / T / A
   const series = (p) => {
     if (p.kind === "book") return { key: "B", prefix: "B" };
     if (p.type === "conference" && p.category) return { key: "D", prefix: "D" };
     if (p.type === "patent") return { key: "P:" + (p.category || ""), prefix: "P" };
     return { key: TYPE[p.type].short, prefix: TYPE[p.type].short };
   };
-  const pubGroup = (p) => p.category || (D.archiveYear && p.year <= D.archiveYear ? "~" + D.archiveYear : String(p.year));
+  // talks and awards are listed as one group labelled by type instead of by year
+  const pubGroup = (p) => p.type === "talk" || p.type === "award" ? TYPE_TITLE[p.type] : p.category || (D.archiveYear && p.year <= D.archiveYear ? "~" + D.archiveYear : String(p.year));
 
   function sortPubs(list) {
     // patents keep the listed order inside each category; everything else newest first
@@ -582,7 +584,7 @@
   /* ---------------- Init ---------------- */
   renderNews();
   renderMembers();
-  const initialFilter = new URLSearchParams(location.search).get("filter");
+  const initialFilter = (new URLSearchParams(location.search).get("filter") || "").toLowerCase();
   if (initialFilter && TYPE[initialFilter]) setPubFilter(initialFilter); else renderPubs();
   renderGallery();
   renderLectures();

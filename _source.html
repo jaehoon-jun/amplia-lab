@@ -35,6 +35,7 @@
     <symbol id="r-array" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="6" height="6"/><rect x="13" y="4" width="6" height="6"/><rect x="22" y="4" width="6" height="6"/><rect x="4" y="13" width="6" height="6"/><rect x="13" y="13" width="6" height="6"/><rect x="22" y="13" width="6" height="6"/><rect x="4" y="22" width="6" height="6"/><rect x="13" y="22" width="6" height="6"/><rect x="22" y="22" width="6" height="6"/></g><rect x="13" y="13" width="6" height="6" fill="currentColor"/></symbol>
     <symbol id="r-pmic" viewBox="0 0 32 32"><path d="M18 3L8 18h7l-2 11 11-16h-7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
     <symbol id="r-neuron" viewBox="0 0 32 32"><circle cx="16" cy="16" r="4.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 13L5 6M12 19l-7 7M11.5 16H3M20.5 16H29M26 12l3 4-3 4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="5" cy="6" r="1.6" fill="currentColor"/><circle cx="5" cy="26" r="1.6" fill="currentColor"/><circle cx="3" cy="16" r="1.6" fill="currentColor"/></symbol>
+    <symbol id="r-brain" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 6C13 4 9 5 8.5 8 5.5 8.5 4 11.5 5 14c-2 2-1.5 6 1 7.5 0 3.5 3.5 6 6.5 4.5 1.5 1.5 3.5 1 3.5-.5"/><path d="M16 6c3-2 7-1 7.5 2 3 .5 4.5 3.5 3.5 6 2 2 1.5 6-1 7.5 0 3.5-3.5 6-6.5 4.5-1.5 1.5-3.5 1-3.5-.5"/><path d="M16 6v19.5"/><path d="M8.5 8c1.5 0 3 1 3 3M5 14c2 0 3.5 1 4 3M6 21.5c1.5-1 3.5-1 5 0M23.5 8c-1.5 0-3 1-3 3M27 14c-2 0-3.5 1-4 3M26 21.5c-1.5-1-3.5-1-5 0"/></g></symbol>
     <!-- logo mark: hexagon of nodes around a chip -->
     <symbol id="logo" viewBox="0 0 40 40">
       <path d="M20 3l14.7 8.5v17L20 37 5.3 28.5v-17z" fill="none" stroke="currentColor" stroke-width="1.8"/>
@@ -62,7 +63,7 @@
           <a class="menu__link" href="professor.html" data-page="professor team">Team <svg class="caret"><use href="#i-caret"/></svg></a>
           <div class="dropdown">
             <a href="professor.html">Professor</a>
-            <a href="team.html#members">Member</a>
+            <a href="team.html#members">Members</a>
             <a href="team.html#alumni">Alumni</a>
           </div>
         </li>
@@ -73,6 +74,7 @@
             <a href="publications.html?filter=conference">Conference</a>
             <a href="publications.html?filter=patent">Patents</a>
             <a href="publications.html?filter=talk">Talks</a>
+            <a href="publications.html?filter=award">Awards</a>
           </div>
         </li>
         <li class="menu__item">
@@ -98,9 +100,9 @@
   <div class="wrap">
     <div class="hero__grid">
       <div>
-        <p class="hero__lead reveal"><span class="hero__lead-dot" aria-hidden="true"></span><b>Mixed-Signal ASIC Design Lab</b><span class="hero__lead-sep" aria-hidden="true"></span><span class="sr-only">, </span>Inha University</p>
-        <h1 class="hero__title reveal" style="--d:.08s">AMPLIA</h1>
-        <p class="hero__sub reveal" style="--d:.16s">Self-motivated students to study and research (cutting-edge analog and mixed-signal ICs) in AMPLIA are encouraged to contact the professor (<a href="mailto:jaehoon.jun@inha.ac.kr" class="ext-link">jaehoon.jun@inha.ac.kr<svg class="ext-icon" aria-hidden="true"><use href="#i-mail"/></svg></a>).</p>
+        <h1 class="hero__title reveal">AMPLIA</h1>
+        <p class="hero__lead reveal" style="--d:.08s"><span class="hero__lead-dot" aria-hidden="true"></span><b>Mixed-Signal ASIC Design Lab</b><span class="hero__lead-sep" aria-hidden="true"></span><span class="sr-only">, </span>Inha University</p>
+        <p class="hero__sub reveal" style="--d:.16s">Self-motivated students interested in designing ASICs at AMPLIA are encouraged to contact us (<a href="mailto:jaehoon.jun@inha.ac.kr" class="ext-link">jaehoon.jun@inha.ac.kr<svg class="ext-icon" aria-hidden="true"><use href="#i-mail"/></svg></a>).</p>
       </div>
     </div>
   </div>
@@ -126,30 +128,33 @@
   <div class="wrap">
     <div class="section-head">
       <div class="reveal">
-        <h2>Research Interests<br><em>&amp; On-Going Projects</em></h2>
+        <h2>Research Interests</h2>
       </div>
       <div class="section-head__action reveal" style="--d:.1s"><a href="research.html" class="btn btn--ghost">View more <svg><use href="#i-chevron"/></svg></a></div>
     </div>
 
     <div class="sub-head sub-head--interests subpage-only reveal"><h3>Research Interests</h3></div>
     <div class="statement reveal">
-      <p><em>Precision IC</em> design based on analog and mixed-signal for various <em class="em-accent">sensors, wearable devices, intelligent robots,<br> smart factories, measurement devices, IoT, AI, security and automotive applications</em>.</p>
+      <p><em>ASIC Design</em> Based on Analog and Mixed-Signal</p>
     </div>
 
-    <ul class="interests" id="interests">
-      <li class="interest reveal"><div class="interest__top"><span class="interest__idx">R/01</span><svg class="interest__icon"><use href="#r-amsc"/></svg></div><div><h4>Analog and Mixed-Signal Circuits</h4><p>AMS · CMOS</p></div></li>
-      <li class="interest reveal"><div class="interest__top"><span class="interest__idx">R/02</span><svg class="interest__icon"><use href="#r-sensor"/></svg></div><div><h4>Sensor Read-Out ICs</h4><p>ROIC · AFE</p></div></li>
-      <li class="interest reveal"><div class="interest__top"><span class="interest__idx">R/03</span><svg class="interest__icon"><use href="#r-precision"/></svg></div><div><h4>Ultra-High-Precision ICs</h4><p>20b+ · LOW-NOISE</p></div></li>
-      <li class="interest reveal"><div class="interest__top"><span class="interest__idx">R/04</span><svg class="interest__icon"><use href="#r-inamp"/></svg></div><div><h4>Instrumentation Amplifiers</h4><p>IA · CHOPPER · PGA</p></div></li>
-      <li class="interest reveal"><div class="interest__top"><span class="interest__idx">R/05</span><svg class="interest__icon"><use href="#r-mini"/></svg></div><div><h4>Sub-Miniature ICs</h4><p>AREA-EFFICIENT</p></div></li>
-      <li class="interest reveal"><div class="interest__top"><span class="interest__idx">R/06</span><svg class="interest__icon"><use href="#r-lowpower"/></svg></div><div><h4>Low-Power Analog Circuits</h4><p>µW · ENERGY-EFFICIENT</p></div></li>
-      <li class="interest reveal"><div class="interest__top"><span class="interest__idx">R/07</span><svg class="interest__icon"><use href="#r-adc"/></svg></div><div><h4>Analog-to-Digital Converters</h4><p>INCREMENTAL · ΔΣ · SAR · SINGLE-SLOPE</p></div></li>
-      <li class="interest reveal"><div class="interest__top"><span class="interest__idx">R/08</span><svg class="interest__icon"><use href="#r-array"/></svg></div><div><h4>Array Circuitry for IoT/AI</h4><p>COLUMN-PARALLEL · ARRAY</p></div></li>
-      <li class="interest reveal"><div class="interest__top"><span class="interest__idx">R/09</span><svg class="interest__icon"><use href="#r-pmic"/></svg></div><div><h4>Power Management ICs</h4><p>LDO · REGULATOR</p></div></li>
-      <li class="interest reveal"><div class="interest__top"><span class="interest__idx">R/10</span><svg class="interest__icon"><use href="#r-neuron"/></svg></div><div><h4>Neuron Circuit for Neuromorphic Computing</h4><p>PiM · NEUROMORPHIC</p></div></li>
+    <ul class="themes" id="interests">
+      <li class="reveal" style="--d:0.00s"><article class="theme theme--blue">
+        <div class="theme__head"><h4>High-Precision Sensor Interfaces</h4><svg class="theme__icon" aria-hidden="true"><use href="#r-sensor"/></svg></div>
+        <div class="theme__body"><ul><li>Ultra-High-Resolution Read-Out ICs for Instrumentation Systems</li><li>Multi-Sensor Interfaces: Bridge, Humidity/Temperature, Biomedical, Displacement, Image, and Audio</li></ul></div>
+      </article></li>
+      <li class="reveal" style="--d:0.08s"><article class="theme theme--teal">
+        <div class="theme__head"><h4>Processing-in-Memory (PIM) IC<br>for AI</h4><svg class="theme__icon" aria-hidden="true"><use href="#r-brain"/></svg></div>
+        <div class="theme__body"><ul><li>NVM-Based PIM IC Design for Neuromorphic Computing</li><li>In-Memory MAC and Logic Operations</li><li>High-TOPS/W AI Computing</li></ul></div>
+      </article></li>
+      <li class="reveal" style="--d:0.16s"><article class="theme theme--amber">
+        <div class="theme__head"><h4>Energy-Efficient<br>Mixed-Signal IPs</h4><svg class="theme__icon" aria-hidden="true"><use href="#r-adc"/></svg></div>
+        <div class="theme__body"><ul><li>Application-Specific ADCs: Incremental, ΔΣ, SAR, Single-Slope, and Hybrid</li><li>High-Speed LDOs</li><li>Event-Driven TDCs</li></ul></div>
+      </article></li>
     </ul>
+    <!-- home-only --><div class="interests-cta reveal"><a href="publications.html" class="btn btn--primary">Publications <svg><use href="#i-chevron"/></svg></a></div><!-- /home-only -->
 
-    <div class="projects">
+    <div class="projects" data-home-hidden>
       <div>
         <div class="sub-head reveal"><h3><span class="live-dot" aria-hidden="true"></span>On-Going Projects</h3><span class="count">08 active</span></div>
         <ul class="proj-list">
@@ -279,13 +284,6 @@
             <li><span class="yr">Feb. 2018</span><div><p class="t">Demonstration Session Certificate of Recognition</p><p class="d">2018 IEEE International Solid-State Circuits Conference (ISSCC)</p></div></li>
           </ul>
         </div>
-
-        <div class="cv-block reveal">
-          <h3>Research Interests</h3>
-          <div class="chips">
-            <span>Sensor Read-Out ICs</span><span>Delta-Sigma ADCs</span><span>Incremental ADCs</span><span>Instrumentation Amplifiers</span><span>Low-Power Analog</span><span>Power Management ICs</span><span>Processing-in-Memory</span>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -330,9 +328,10 @@
         <button class="tab" role="tab" data-filter="conference" aria-selected="false">Conferences<span class="n"></span></button>
         <button class="tab" role="tab" data-filter="patent" aria-selected="false">Patents<span class="n"></span></button>
         <button class="tab" role="tab" data-filter="talk" aria-selected="false">Talks<span class="n"></span></button>
+        <button class="tab" role="tab" data-filter="award" aria-selected="false">Awards<span class="n"></span></button>
       </div>
     </div>
-    <p class="pub-note reveal">* Corresponding authorship · † Co-first author · <b>Bold</b>: AMPLIA member</p>
+    <p class="pub-note reveal">* Corresponding authorship · <sup>†</sup> Co-first author · <b>Bold</b>: AMPLIA member</p>
 
     <div id="pubProgress"></div>
     <div id="pubList" aria-live="polite"></div>

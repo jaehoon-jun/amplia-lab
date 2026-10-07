@@ -82,7 +82,7 @@ window.AMPLIA = {
 
 
   /* ---------------- Publications ----------------
-     type:    "journal" | "conference" | "patent" | "talk"
+     type:    "journal" | "conference" | "patent" | "talk" | "award"
      kind:    "book" 이면 Journal 목록 안에서 책으로 표시 (번호 B1, B2 …)
      venue:   배지에 표시되는 약칭 (예: "IEEE JSSC")
      authors: 교수 이름(profName)은 자동으로 굵게 표시.
@@ -468,7 +468,17 @@ window.AMPLIA = {
     { type: "talk", year: 2024, venue: "IDEC", authors: "", title: "Design of Op Amps", info: "IDEC, Mar. 2024.", link: "" },
     { type: "talk", year: 2024, venue: "KDT", authors: "", title: "High-Speed, Low-Power Circuitry", info: "KDT, Jan. 2024.", link: "" },
     { type: "talk", year: 2023, venue: "Kwangwoon Univ.", authors: "", title: "High Resolution ADC", info: "Kwangwoon Univ., Dec. 2023.", link: "" },
-    { type: "talk", year: 2023, venue: "SoC Conference", authors: "", title: "System Semiconductor for 4th Industrial Revolution", info: "2023 SoC Conference, May 2023.", link: "" }
+    { type: "talk", year: 2023, venue: "SoC Conference", authors: "", title: "System Semiconductor for 4th Industrial Revolution", info: "2023 SoC Conference, May 2023.", link: "" },
+
+    /* ---- Awards ---- */
+    { type: "award", year: 2026, venue: "ICT Challenge", authors: "김세연, 김진하", title: "부총리 겸 과기부장관상 (Top Award)", info: "ICT 챌린지 2026, Aug. 2026.", link: "" },
+    { type: "award", year: 2026, venue: "KCS", authors: "이강재, 김동환", title: "반도체특성화 반도체프로젝트 최우수상", info: "KCS, Jan. 2026.", link: "" },
+    { type: "award", year: 2025, venue: "반도체공학회", authors: "김동환", title: "정진용 Scholarship Award", info: "반도체공학회, Nov. 2025.", link: "" },
+    { type: "award", year: 2025, venue: "IEEE ICCE-Asia", authors: "박성호, 이강재", title: "Two Best Paper Awards", info: "IEEE/IEIE ICCE-Asia, Oct. 2025.", link: "" },
+    { type: "award", year: 2025, venue: "IITP", authors: "심상웅, 심건희, 김진하, 김세연", title: "AI반도체 설계경진대회 우수상", info: "과기부, IITP, Jan. 2025.", link: "" },
+    { type: "award", year: 2025, venue: "Inha Univ.", authors: "전재훈", title: "우수신진교수상 (Inha Young Faculty Award)", info: "Inha University, Jan. 2025.", link: "" },
+    { type: "award", year: 2024, venue: "KIAT", authors: "", title: "반도체경진대회 우수상", info: "교육부, KIAT, Dec. 2024.", link: "" },
+    { type: "award", year: 2022, venue: "IEEE ISCAS", authors: "J. Jun, et al.", title: "Best Paper Award", info: "2022 IEEE International Symposium on Circuits and Systems (ISCAS), Mar. 2022.", link: "" }
   ],
 
   /* ---------------- Members ----------------
@@ -479,27 +489,39 @@ window.AMPLIA = {
      photo:  "assets/img/members/xxx.jpg" (없으면 "")                    */
   members: [
     { group: "grad", en: "Seyeon Kim", ko: "김세연", course: "M.S. Course", since: "2025. 03", email: "vitt0ria@inha.edu",
-      topics: ["Subminiature Imager", "Hybrid LDO"], photo: "assets/img/members/seyeon-kim.jpg" },
+      topics: ["CIS", "TDC"], photo: "assets/img/members/seyeon-kim.jpg" },
     { group: "grad", en: "Woosol Han", ko: "한우솔", course: "M.S. Course", since: "2025. 03", email: "woosol1025@inha.edu",
-      topics: ["ΣΔ ADCs", "Low-Power Sensor ROICs"], photo: "assets/img/members/woosol-han.jpg" },
+      topics: ["NS-SAR ADC", "Sensor Interface"], photo: "assets/img/members/woosol-han.jpg" },
     { group: "grad", en: "KeonHee Sim", ko: "심건희", course: "M.S. Course", since: "2025. 03", email: "sgh091717@inha.edu",
-      topics: ["Zoom ADCs", "Low-Power Sensor ROICs"], photo: "assets/img/members/keonhee-sim.jpg" },
+      topics: ["ΣΔ ADC", "Sensor Interface"], photo: "assets/img/members/keonhee-sim.jpg" },
     { group: "grad", en: "Sangwoong Sim", ko: "심상웅", course: "M.S. Course", since: "2025. 03", email: "aioseu79@inha.edu",
-      topics: ["Digital LDO", "Sensor Interfaces"], photo: "assets/img/members/sangwoong-sim.jpg" },
+      topics: ["High Speed LDO", "Zoom ADC"], photo: "assets/img/members/sangwoong-sim.jpg" },
     { group: "grad", en: "Jinha Kim", ko: "김진하", course: "M.S. Course", since: "2025. 03", email: "kimjinha382@inha.edu",
-      topics: ["Subminiature Imager", "Time-to-Digital Converter"], photo: "assets/img/members/jinha-kim.jpg" },
+      topics: ["CIS", "TDC"], photo: "assets/img/members/jinha-kim.jpg" },
     { group: "grad", en: "Donghwan Kim", ko: "김동환", course: "M.S. Course", since: "2026. 03", email: "kdh20@inha.edu",
-      topics: ["Analog PIM", "Digital LDO"], photo: "assets/img/members/donghwan-kim.jpg" },
+      topics: ["PIM", "Zoom ADC"], photo: "assets/img/members/donghwan-kim.jpg" },
     { group: "grad", en: "Kangjae Lee", ko: "이강재", course: "M.S. Course", since: "2026. 03", email: "lkjaee0120@inha.edu",
-      topics: ["PIM Architecture", "High Speed ADC"], photo: "assets/img/members/kangjae-lee.jpg" },
+      topics: ["PIM", "High Speed ADC"], photo: "assets/img/members/kangjae-lee.jpg" },
     { group: "grad", en: "Gyeongseok Yu", ko: "유경석", course: "M.S. Course", since: "2026. 03", email: "ajy2525@inha.edu",
-      topics: ["nV-Noise IA", "PIM"], photo: "assets/img/members/gyeongseok-yu.jpg" },
+      topics: ["PIM", "Low Noise AFE"], photo: "assets/img/members/gyeongseok-yu.jpg" },
     { group: "grad", en: "Hyunsoo Chung", ko: "정현수", course: "M.S. Course", since: "2026. 03", email: "prehyuns0209@inha.edu",
-      topics: ["PIM Architecture", "High-Resolution ADCs"], photo: "assets/img/members/hyunsoo-chung.jpg" },
+      topics: ["PIM", "Zoom ADC"], photo: "assets/img/members/hyunsoo-chung.jpg" },
     { group: "grad", en: "Seongho Park", ko: "박성호", course: "M.S. Course", since: "2026. 09", email: "parksh2729@inha.edu",
-      topics: ["Low Noise AFE"], photo: "assets/img/members/seongho-park.png" },
+      topics: ["High Speed LDO", "Low Noise AFE"], photo: "assets/img/members/seongho-park.png" },
     { group: "ug", en: "Juho Lee", ko: "이주호", course: "Undergraduate", since: "2026. 01", email: "jh77@inha.edu",
-      topics: ["tbd"], photo: "assets/img/members/juho-lee.jpg" }
+      topics: ["TBD"], photo: "assets/img/members/juho-lee.jpg" },
+    { group: "ug", en: "Jaewon Joung", ko: "정재원", course: "Undergraduate", since: "", email: "wjdwodnjs032@naver.com",
+      topics: ["TBD"], photo: "assets/img/members/jaewon-joung.jpg" },
+    { group: "ug", en: "Chanyoung Chae", ko: "채찬영", course: "Undergraduate", since: "", email: "boss020514@inha.edu",
+      topics: ["TBD"], photo: "assets/img/members/chanyoung-chae.jpg" },
+    { group: "ug", en: "Dongyeon Lee", ko: "이동연", course: "Undergraduate", since: "", email: "dlehddus1012@inha.edu",
+      topics: ["TBD"], photo: "assets/img/members/dongyeon-lee.png" },
+    { group: "ug", en: "Yuntai Yang", ko: "양윤태", course: "Undergraduate", since: "", email: "yuntai7@inha.edu",
+      topics: ["TBD"], photo: "assets/img/members/yuntai-yang.jpg" },
+    { group: "ug", en: "Wonjun Hwang", ko: "황원준", course: "Undergraduate", since: "", email: "hwj6267@inha.edu",
+      topics: ["TBD"], photo: "assets/img/members/wonjun-hwang.png" },
+    { group: "ug", en: "Seungwon Oh", ko: "오승원", course: "Undergraduate", since: "", email: "ohseungwon56@inha.edu",
+      topics: ["TBD"], photo: "assets/img/members/seungwon-oh.jpg" }
   ],
 
   /* Alumni — same photo card as members

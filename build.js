@@ -16,10 +16,12 @@ const HOME_SECTIONS = ["home", "news", "research", "chips-home", "join"];
 // title: menu/breadcrumb name · heading: big page title (defaults to title)
 // dropHead: remove the section's own heading block (.section-head) on this page
 // parts: keep only these <!-- part:NAME --> … <!-- /part:NAME --> blocks of the section
+// in _source.html, <!-- home-only --> … <!-- /home-only --> is kept only on index.html,
+// and an element marked data-home-hidden is hidden on index.html but shown on its own page
 const PAGES = [
   { key: "research",     title: "Research",     sections: ["research"], heading: "Research Interests<br>&amp; On-Going Projects", dropHead: true },
   { key: "professor",    title: "Professor",    sections: ["team"], parts: ["professor"], dropHead: true },
-  { key: "team",         title: "Members &amp; Alumni", sections: ["team"], parts: ["people"], dropHead: true },
+  { key: "team",         title: "Members",      sections: ["team"], parts: ["people"], dropHead: true },
   { key: "publications", title: "Publications", sections: ["publications"], dropHead: true },
   { key: "gallery",      title: "Chip Gallery", sections: ["gallery"], parts: ["chips"], dropHead: true },
   { key: "teamwork",     title: "Teamwork",     sections: ["gallery"], parts: ["teamwork"], dropHead: true },
@@ -68,7 +70,15 @@ function pageHero(title, heading) {
 </section>`;
 }
 
-fs.writeFileSync(path.join(ROOT, "index.html"), head + "<main>\n" + HOME_SECTIONS.map(sectionWithBanner).join("\n\n") + "\n" + tail);
+function forHome(html) {
+  return html.replace(/<!-- \/?home-only -->/g, "").replace(/ data-home-hidden/g, ' style="display:none" aria-hidden="true"');
+}
+
+function forPage(html) {
+  return html.replace(/\n\s*<!-- home-only -->[\s\S]*?<!-- \/home-only -->/g, "").replace(/ data-home-hidden/g, "");
+}
+
+fs.writeFileSync(path.join(ROOT, "index.html"), head + "<main>\n" + forHome(HOME_SECTIONS.map(sectionWithBanner).join("\n\n")) + "\n" + tail);
 console.log("✓ index.html");
 
 for (const p of PAGES) {
@@ -79,7 +89,7 @@ for (const p of PAGES) {
     let html = section(id);
     if (p.parts) html = onlyParts(html, p.parts);
     if (p.dropHead) html = withoutHead(html);
-    return html;
+    return forPage(html);
   }).join("\n\n");
   const html = top + "<main>\n" + pageHero(p.title, p.heading || p.title) + "\n\n" + body + "\n" + tail;
   fs.writeFileSync(path.join(ROOT, `${p.key}.html`), html);

@@ -471,11 +471,13 @@ window.AMPLIA = {
     { type: "talk", year: 2023, venue: "SoC Conference", authors: "", title: "System Semiconductor for 4th Industrial Revolution", info: "2023 SoC Conference, May 2023.", link: "" },
 
     /* ---- Awards ---- */
-    { type: "award", year: 2026, venue: "ICT Challenge", authors: "김세연, 김진하", title: "부총리 겸 과기부장관상 (Top Award)", info: "ICT 챌린지 2026, Aug. 2026.", link: "" },
-    { type: "award", year: 2026, venue: "KCS", authors: "이강재, 김동환", title: "반도체특성화 반도체프로젝트 최우수상", info: "KCS, Jan. 2026.", link: "" },
-    { type: "award", year: 2025, venue: "반도체공학회", authors: "김동환", title: "정진용 Scholarship Award", info: "반도체공학회, Nov. 2025.", link: "" },
-    { type: "award", year: 2025, venue: "IEEE ICCE-Asia", authors: "박성호, 이강재", title: "Two Best Paper Awards", info: "IEEE/IEIE ICCE-Asia, Oct. 2025.", link: "" },
-    { type: "award", year: 2025, venue: "IITP", authors: "심상웅, 심건희, 김진하, 김세연", title: "AI반도체 설계경진대회 우수상", info: "과기부, IITP, Jan. 2025.", link: "" },
+    { type: "award", year: 2026, venue: "ICT Challenge", authors: "{김세연}, {김진하}", title: "부총리 겸 과기부장관상 (Top Award)", info: "ICT 챌린지 2026, Aug. 2026.", link: "" },
+    { type: "award", year: 2026, venue: "KCS", authors: "{이강재}, {김동환}", title: "반도체특성화 반도체프로젝트 최우수상", info: "KCS, Jan. 2026.", link: "" },
+    { type: "award", year: 2025, venue: "반도체공학회", authors: "{김동환}", title: "정진용 Scholarship Award", info: "반도체공학회, Nov. 2025.", link: "" },
+    { type: "award", year: 2025, venue: "IEEE ICCE-Asia", authors: "{박성호}, {이강재}", title: "Two Best Paper Awards", info: "IEEE/IEIE ICCE-Asia, Oct. 2025.", link: "" },
+    { type: "award", year: 2025, venue: "IEEE ICCE-Asia", authors: "H. Park, C. Hwang, {S. Kim}, W. Choi, and J. Jun*", title: "Best Paper Award", info: "2025 IEEE/IEIE International Conference on Consumer Electronics-Asia (ICCE-Asia), Oct. 2025.", link: "" },
+    { type: "award", year: 2025, venue: "IEEE ICCE-Asia", authors: "{S. Park}, {K. Sim}, W. Choi, and J. Jun*", title: "Best Paper Award", info: "2025 IEEE/IEIE International Conference on Consumer Electronics-Asia (ICCE-Asia), Oct. 2025.", link: "" },
+    { type: "award", year: 2025, venue: "IITP", authors: "{심상웅}, {심건희}, {김진하}, {김세연}", title: "AI반도체 설계경진대회 우수상", info: "과기부, IITP, Jan. 2025.", link: "" },
     { type: "award", year: 2025, venue: "Inha Univ.", authors: "전재훈", title: "우수신진교수상 (Inha Young Faculty Award)", info: "Inha University, Jan. 2025.", link: "" },
     { type: "award", year: 2024, venue: "KIAT", authors: "", title: "반도체경진대회 우수상", info: "교육부, KIAT, Dec. 2024.", link: "" },
     { type: "award", year: 2022, venue: "IEEE ISCAS", authors: "J. Jun, et al.", title: "Best Paper Award", info: "2022 IEEE International Symposium on Circuits and Systems (ISCAS), Mar. 2022.", link: "" }

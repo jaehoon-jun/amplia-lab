@@ -512,8 +512,6 @@ window.AMPLIA = {
       topics: ["High Speed LDO", "Low Noise AFE"], photo: "assets/img/members/seongho-park.png" },
     { group: "ug", en: "Juho Lee", ko: "이주호", course: "Undergraduate", since: "2026. 01", email: "jh77@inha.edu",
       topics: ["TBD"], photo: "assets/img/members/juho-lee.jpg" },
-    { group: "ug", en: "Jaewon Joung", ko: "정재원", course: "Undergraduate", since: "", email: "wjdwodnjs032@naver.com",
-      topics: ["TBD"], photo: "assets/img/members/jaewon-joung.jpg" },
     { group: "ug", en: "Chanyoung Chae", ko: "채찬영", course: "Undergraduate", since: "", email: "boss020514@inha.edu",
       topics: ["TBD"], photo: "assets/img/members/chanyoung-chae.jpg" },
     { group: "ug", en: "Dongyeon Lee", ko: "이동연", course: "Undergraduate", since: "", email: "dlehddus1012@inha.edu",

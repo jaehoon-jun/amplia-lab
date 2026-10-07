@@ -216,11 +216,10 @@
       : [
           `<span class="tag ${t.cls}">${t.label}</span>`,
           `<span class="tag tag--line">${esc(p.venue)}</span>`,
-          p.award ? `<span class="tag ${/best paper/i.test(p.award) ? "tag--best" : "tag--amber"}">★ ${esc(p.award)}</span>` : "",
+          p.award ? `<span class="tag tag--amber">★ ${esc(p.award)}</span>` : "",
           p.status ? `<span class="tag tag--line">${esc(p.status)}</span>` : ""
         ].join("");
-    const best = /best paper/i.test(p.award || "");
-    return `<article class="pub${best ? " pub--best" : ""}" style="animation-delay:${Math.min(i * 0.05, 0.4)}s">
+    return `<article class="pub" style="animation-delay:${Math.min(i * 0.05, 0.4)}s">
       <span class="pub__no">[${p._no}]</span>
       <div>
         <div class="pub__badges">${badges}</div>

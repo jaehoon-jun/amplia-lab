@@ -509,18 +509,18 @@ window.AMPLIA = {
       topics: ["PIM", "Zoom ADC"], photo: "assets/img/members/hyunsoo-chung.jpg" },
     { group: "grad", en: "Seongho Park", ko: "박성호", course: "M.S. Course", since: "2026. 09", email: "parksh2729@inha.edu",
       topics: ["High Speed LDO", "Low Noise AFE"], photo: "assets/img/members/seongho-park.png" },
-    { group: "ug", en: "Juho Lee", ko: "이주호", course: "Undergraduate", since: "2026. 01", email: "jh77@inha.edu",
-      topics: ["TBD"], photo: "assets/img/members/juho-lee.jpg" },
+    { group: "ug", en: "Juho Lee", ko: "이주호", course: "Undergraduate", since: "", email: "jh77@inha.edu",
+      topics: [], photo: "assets/img/members/juho-lee.jpg" },
     { group: "ug", en: "Chanyoung Chae", ko: "채찬영", course: "Undergraduate", since: "", email: "boss020514@inha.edu",
-      topics: ["TBD"], photo: "assets/img/members/chanyoung-chae.jpg" },
+      topics: [], photo: "assets/img/members/chanyoung-chae.jpg" },
     { group: "ug", en: "Dongyeon Lee", ko: "이동연", course: "Undergraduate", since: "", email: "dlehddus1012@inha.edu",
-      topics: ["TBD"], photo: "assets/img/members/dongyeon-lee.png" },
+      topics: [], photo: "assets/img/members/dongyeon-lee.png" },
     { group: "ug", en: "Yuntai Yang", ko: "양윤태", course: "Undergraduate", since: "", email: "yuntai7@inha.edu",
-      topics: ["TBD"], photo: "assets/img/members/yuntai-yang.jpg" },
+      topics: [], photo: "assets/img/members/yuntai-yang.jpg" },
     { group: "ug", en: "Wonjun Hwang", ko: "황원준", course: "Undergraduate", since: "", email: "hwj6267@inha.edu",
-      topics: ["TBD"], photo: "assets/img/members/wonjun-hwang.png" },
+      topics: [], photo: "assets/img/members/wonjun-hwang.png" },
     { group: "ug", en: "Seungwon Oh", ko: "오승원", course: "Undergraduate", since: "", email: "ohseungwon56@inha.edu",
-      topics: ["TBD"], photo: "assets/img/members/seungwon-oh.jpg" }
+      topics: [], photo: "assets/img/members/seungwon-oh.jpg" }
   ],
 
   /* Alumni — same photo card as members

@@ -539,6 +539,15 @@ window.AMPLIA = {
       thesis: "Low-Ripple IA", now: "Pixelplus", photo: "assets/img/members/jungkook-jo.jpg" }
   ],
 
+  /* Easter egg — Alumni 카운트 왼쪽의 보이지 않는 지점을 클릭하면 Alumni 아래에 "Honorary Member" 섹션이 나타납니다
+     facts: [라벨, 값] 목록 · fit: "contain"이면 사진을 자르지 않고 흰 배경 위에 전체 표시                */
+  honorary: [
+    { en: "Seongwon Lee", ko: "이성원",
+      facts: [["Role", "Site maintenance"], ["Affiliation", "Professor's wife"]], photo: "assets/img/members/seongwon-lee.jpg", fit: "contain" },
+    { en: "Totti Lee", ko: "이또띠",
+      facts: [["Role", "Cutie"], ["Affiliation", "The professor's wife's sister's cat"]], photo: "assets/img/members/totti-lee.jpg" }
+  ],
+
   /* ---------------- Chip Gallery ----------------
      값이 있는 항목만 카드에 표시됩니다: process · pub(게재처) · year(게재처가 없을 때) · area
      맨 위 4개는 홈 화면 Chip Gallery에도 표시됩니다 (최신 칩을 맨 위에 추가)

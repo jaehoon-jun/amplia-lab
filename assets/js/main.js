@@ -50,6 +50,38 @@
     const alumni = D.alumni || [];
     $("#alumniGrid").innerHTML = alumni.map(alumniCard).join("");
     setCount("alumni", alumni.length, "alumni");
+    initHonorary();
+  }
+
+  // Easter egg: an invisible spot left of the alumni count toggles the Honorary Member section
+  function honoraryCard(h) {
+    return `<article class="member">
+      <div class="photo${h.fit === "contain" ? " photo--contain" : ""}">${photoBox(h.photo, h.en)}</div>
+      <div class="member__body">
+        ${nameLine(h)}
+        <dl class="member__facts">${h.facts.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
+      </div>
+    </article>`;
+  }
+  function initHonorary() {
+    const count = $('[data-count-of="alumni"]');
+    const section = $("#honorary");
+    if (!(D.honorary || []).length || !count || !section) return;
+    $("#honoraryGrid").innerHTML = D.honorary.map(honoraryCard).join("");
+    const spot = document.createElement("span");
+    spot.className = "egg-spot";
+    spot.setAttribute("aria-hidden", "true");
+    count.before(spot);
+    spot.addEventListener("click", () => {
+      section.hidden = !section.hidden;
+      if (!section.hidden) section.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "nearest" });
+    });
+    // a wider invisible spot at the right end of the Honorary Member heading hides it again
+    const close = document.createElement("span");
+    close.className = "egg-close";
+    close.setAttribute("aria-hidden", "true");
+    $(".sub-head", section).append(close);
+    close.addEventListener("click", () => { section.hidden = true; });
   }
   function setCount(key, n, word) {
     const el = $(`[data-count-of="${key}"]`);

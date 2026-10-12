@@ -562,6 +562,13 @@ body[data-page="research"] .projects > div:first-child .tag--slate { color: var(
 .member__facts div { display: grid; gap: 1px; }
 .member__facts dt { font-family: var(--label); font-size: 11.5px; color: var(--faint); letter-spacing: .01em; }
 .member__facts dd { margin: 0; font-size: 13.5px; color: var(--ink-2); line-height: 1.45; }
+/* easter egg: invisible click spot left of the alumni count, and the Honorary Member section it reveals */
+.sub-head .egg-spot { margin-left: auto; margin-right: -12px; width: 28px; height: 18px; align-self: center; cursor: default; }
+.sub-head .egg-close { margin-left: auto; width: 160px; max-width: 40%; height: 36px; align-self: center; cursor: default; }
+#honorary:not([hidden]) { animation: egg-in .6s var(--ease) both; }
+.member .photo--contain { background: #fff; }
+.member .photo--contain img { object-fit: contain; object-position: center; }
+@keyframes egg-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 
 
 /* ==========================================================================

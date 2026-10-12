@@ -555,6 +555,8 @@ body[data-page="research"] .projects > div:first-child .tag--slate { color: var(
 .member__role { margin-top: 6px; font-family: var(--label); font-variant-numeric: tabular-nums; font-size: 13px; font-weight: 500; letter-spacing: .01em; color: var(--blue); }
 .member__name { font-size: 17px; font-weight: 650; }
 .member__name small { font-size: 14px; font-weight: 500; color: var(--muted); margin-left: 6px; }
+.member__name--note { display: flex; flex-wrap: wrap; align-items: baseline; }
+.member__note { margin-left: auto; padding-left: 8px; font-size: 12px; font-weight: 600; color: var(--red); white-space: nowrap; }
 .member__mail { margin-top: 4px; display: block; font-family: var(--label); font-variant-numeric: tabular-nums; font-size: 13px; color: var(--muted); word-break: break-all; transition: color .2s; }
 .member__mail:hover { color: var(--blue); }
 .member__mail.ext-link { display: flex; }

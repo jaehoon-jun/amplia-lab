@@ -540,11 +540,11 @@ window.AMPLIA = {
   ],
 
   /* Easter egg — Alumni 카운트 왼쪽의 보이지 않는 지점을 클릭하면 Alumni 아래에 "Honorary Member" 섹션이 나타납니다
-     facts: [라벨, 값] 목록 · fit: "contain"이면 사진을 자르지 않고 흰 배경 위에 전체 표시                */
+     note: 이름 옆 빨간 작은 글씨 · facts: [라벨, 값] 목록 · fit: "contain"이면 사진을 자르지 않고 흰 배경 위에 전체 표시                */
   honorary: [
     { en: "Seongwon Lee", ko: "이성원",
       facts: [["Role", "Site maintenance"], ["Relationship", "Professor's wife"]], photo: "assets/img/members/seongwon-lee.jpg", fit: "contain" },
-    { en: "Totti Lee", ko: "이또띠",
+    { en: "Totti Lee", ko: "이또띠", note: "※ 전또띠X",
       facts: [["Role", "Cutie"], ["Relationship", "The professor's wife's sister's cat"]], photo: "assets/img/members/totti-lee.jpg" }
   ],
 

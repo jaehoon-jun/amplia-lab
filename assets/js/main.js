@@ -12,7 +12,7 @@
 
   /* ---------------- Members ---------------- */
   const photoBox = (src, alt) => (src ? `<img src="${esc(src)}" alt="${esc(alt)}" loading="lazy">` : `${personIcon}<span>Photo</span>`);
-  const nameLine = (p) => `<h4 class="member__name">${esc(p.en)}${p.ko ? `<small>(${esc(p.ko)})</small>` : ""}</h4>`;
+  const nameLine = (p) => `<h4 class="member__name${p.note ? " member__name--note" : ""}">${esc(p.en)}${p.ko ? `<small>(${esc(p.ko)})</small>` : ""}${p.note ? `<span class="member__note">${esc(p.note)}</span>` : ""}</h4>`;
 
   function memberCard(m) {
     const topics = (m.topics || []).filter(Boolean);

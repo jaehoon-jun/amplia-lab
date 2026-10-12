@@ -101,7 +101,7 @@ window.AMPLIA = {
   /* Journal 탭 상단 "In Progress" 박스 */
   pubInProgress: [
     { status: "On Writing", text: "Few more SCI papers are being written." },
-    { status: "Accepted", text: "IEEE Transactions on Circuits and Systems II: Regular Papers (TCAS-II)", note: "Corresponding Author" },
+    { status: "Submitted", text: "IEEE Transactions on Circuits and Systems I: Regular Papers (TCAS-I)", note: "Corresponding Author" },
     { status: "Submitted", text: "IEEE Transactions on Instrumentation and Measurement (TIM)", note: "Corresponding Author" },
     { status: "Submitted", text: "IEEE Transactions on Very Large Scale Integration Systems (TVLSI)", note: "Corresponding Author" }
   ],

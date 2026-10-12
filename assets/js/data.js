@@ -555,8 +555,8 @@ window.AMPLIA = {
   chips: [
     { name: "Biopotential AFE", process: "28nm", pub: "IEEE TCAS-II'26", year: "", area: "", photo: "assets/img/chips/biopotential-afe.png" },
     { name: "Event-Driven TDC", process: "28nm", pub: "IEEE TVLSI'26", year: "", area: "", photo: "assets/img/chips/event-driven-tdc.png" },
-    { name: "Test Signal Generator", process: "28nm", pub: "IEEE TPEL'26", year: "", area: "", photo: "assets/img/chips/test-signal-generator.png" },
     { name: "High Speed D-LDO", process: "28nm", pub: "IEEE TPEL'26", year: "", area: "", photo: "assets/img/chips/high-speed-d-ldo.png" },
+    { name: "Test Signal Generator", process: "28nm", pub: "IEEE TPEL'26", year: "", area: "", photo: "assets/img/chips/test-signal-generator.png" },
     { name: "PM Sensor", process: "0.13μm", pub: "IEEE Sensors Journal'25", year: "", area: "", photo: "assets/img/chips/pm-sensor.jpg" },
     { name: "Digitizer Array", process: "28nm", pub: "IEEE Sensors Journal'25", year: "", area: "", photo: "assets/img/chips/digitizer-array.png" },
     { name: "ΣΔ ADC", process: "0.18μm", pub: "IEEE Sensors Journal'25", year: "", area: "", photo: "assets/img/chips/sigma-delta-adc-2025.png" },

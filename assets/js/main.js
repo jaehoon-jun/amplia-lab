@@ -200,7 +200,7 @@
     box.innerHTML = `<div class="pub-progress">
       <h4 class="pub-progress__title"><span class="live-dot" aria-hidden="true"></span>In Progress</h4>
       <ul>${list.map((x) => `<li>
-        <span class="tag ${x.status === "Submitted" ? "tag--blue" : "tag--amber"}">${esc(x.status)}</span>
+        <span class="tag ${x.status === "Accepted" ? "tag--teal" : x.status === "Submitted" ? "tag--blue" : "tag--amber"}">${esc(x.status)}</span>
         <span class="pub-progress__text">${esc(x.text)}${x.note ? ` <em>[${esc(x.note)}]</em>` : ""}</span>
       </li>`).join("")}</ul>
     </div>`;

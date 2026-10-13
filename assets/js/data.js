@@ -544,7 +544,7 @@ window.AMPLIA = {
   honorary: [
     { en: "Seongwon Lee", ko: "이성원",
       facts: [["Role", "Site maintenance"], ["Relationship", "Professor's wife"]], photo: "assets/img/members/seongwon-lee.jpg", fit: "contain" },
-    { en: "Totti Lee", ko: "이또띠", note: "※ 전또띠X",
+    { en: "Totti Lee", ko: "이또띠",
       facts: [["Role", "Cutie"], ["Relationship", "The professor's wife's sister's cat"]], photo: "assets/img/members/totti-lee.jpg" }
   ],
 

@@ -61,6 +61,10 @@ p { margin: 0; }
 .num { font-family: var(--label); font-variant-numeric: tabular-nums; }
 .ext-link { display: inline-flex; align-items: center; gap: 5px; }
 .ext-icon { width: 13px; height: 13px; flex: none; }
+.copy-mail { position: relative; }
+.copy-mail.is-copied .ext-icon { color: var(--blue); }
+.copy-mail::after { content: "Copied!"; position: absolute; left: 0; bottom: 100%; margin-bottom: 4px; padding: 2px 7px; border-radius: 4px; background: var(--ink-2); color: #fff; font-family: var(--label); font-size: 11px; line-height: 1.5; white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity .2s; }
+.copy-mail.is-copied::after { opacity: 1; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 /* ---------- Labels ---------- */

@@ -21,7 +21,7 @@
       <div class="member__body">
         ${nameLine(m)}
         <p class="member__role">${esc(m.course)}${m.since ? ` (${esc(m.since)} ~ )` : ""}</p>
-        <a class="member__mail ext-link" href="mailto:${esc(m.email)}">${esc(m.email)}<svg class="ext-icon" aria-hidden="true"><use href="#i-mail"/></svg></a>
+        <a class="member__mail ext-link copy-mail" title="Copy email" href="mailto:${esc(m.email)}">${esc(m.email)}<svg class="ext-icon" aria-hidden="true"><use href="#i-copy"/></svg></a>
         ${topics.length ? `<ul class="member__topics">${topics.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>` : ""}
       </div>
     </article>`;
@@ -32,7 +32,7 @@
       <div class="member__body">
         ${nameLine(a)}
         <p class="member__role">${esc(a.degree)}${a.period ? ` (${esc(a.period)})` : ""}</p>
-        ${a.email ? `<a class="member__mail ext-link" href="mailto:${esc(a.email)}">${esc(a.email)}<svg class="ext-icon" aria-hidden="true"><use href="#i-mail"/></svg></a>` : ""}
+        ${a.email ? `<a class="member__mail ext-link copy-mail" title="Copy email" href="mailto:${esc(a.email)}">${esc(a.email)}<svg class="ext-icon" aria-hidden="true"><use href="#i-copy"/></svg></a>` : ""}
         ${a.thesis || a.now ? `<dl class="member__facts">${a.thesis ? `<div><dt>Dissertation</dt><dd>${esc(a.thesis)}</dd></div>` : ""}${a.now ? `<div><dt>Affiliation</dt><dd>${esc(a.now)}</dd></div>` : ""}</dl>` : ""}
       </div>
     </article>`;
@@ -612,6 +612,28 @@
     update();
   }
 
+  /* ---------------- Email: click to copy (falls back to mailto if the clipboard is unavailable) ---------------- */
+  function initCopyMail() {
+    document.addEventListener("click", (ev) => {
+      const a = ev.target.closest("a.copy-mail");
+      if (!a || !navigator.clipboard) return;
+      ev.preventDefault();
+      const email = decodeURIComponent(a.getAttribute("href").replace(/^mailto:/, "").split("?")[0]);
+      navigator.clipboard.writeText(email).then(() => {
+        const use = $("use", a);
+        a.classList.add("is-copied");
+        a.title = "Copied!";
+        if (use) use.setAttribute("href", "#i-check");
+        clearTimeout(a._copyTimer);
+        a._copyTimer = setTimeout(() => {
+          a.classList.remove("is-copied");
+          a.title = "Copy email";
+          if (use) use.setAttribute("href", "#i-copy");
+        }, 1500);
+      }, () => { location.href = a.href; });
+    });
+  }
+
   /* ---------------- Init ---------------- */
   renderNews();
   renderMembers();
@@ -621,6 +643,7 @@
   renderLectures();
   $$("#pubTabs .tab").forEach((t) => t.addEventListener("click", () => setPubFilter(t.dataset.filter)));
 
+  initCopyMail();
   initNav();
   initHeroBg();
   initPageIndicator();

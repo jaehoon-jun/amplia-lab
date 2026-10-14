@@ -11,6 +11,7 @@ window.AMPLIA = {
      제목 옆 "Updated 날짜"는 맨 위 항목의 날짜로 자동 표시됩니다
      홈 화면에는 최근 7개가 보이고, "View more"를 누를 때마다 5개씩 더 보입니다 (NEWS_FIRST · NEWS_STEP, main.js)  */
   news: [
+    { date: "2026.10", type: "Award", text: "미래형자동차 산학프로젝트 콘테스트 대상 (KEA 회장상) (Top Award).", who: "이강재, 김진하, 유경석, 김동환" },
     { date: "2026.10", type: "Research", text: "Paper about “Biopotential AFE” has been accepted to IEEE TCAS-II.", who: "조정국, 유경석" },
     { date: "2026.09", type: "Funding", text: "New research grant: “석사과정생연구장려금 (NRF)”.", who: "이강재" },
     { date: "2026.08", type: "Award", text: "ICT 챌린지 2026 부총리 겸 과기부장관상(Top Award).", who: "김세연, 김진하", links: [
@@ -489,6 +490,7 @@ window.AMPLIA = {
     { type: "talk", year: 2023, venue: "SoC Conference", authors: "", title: "System Semiconductor for 4th Industrial Revolution", info: "2023 SoC Conference, May 2023.", link: "" },
 
     /* ---- Awards ---- */
+    { type: "award", year: 2026, venue: "KEA", authors: "{이강재}, {김진하}, {유경석}, {김동환}", title: "대상 (KEA 회장상) (Top Award)", info: "미래형자동차 산학프로젝트 콘테스트, Oct. 2026.", link: "" },
     { type: "award", year: 2026, venue: "ICT Challenge", authors: "{김세연}, {김진하}", title: "부총리 겸 과기부장관상 (Top Award)", info: "ICT 챌린지 2026, Aug. 2026.", link: "" },
     { type: "award", year: 2026, venue: "KCS", authors: "{이강재}, {김동환}", title: "반도체특성화 반도체프로젝트 최우수상", info: "KCS, Jan. 2026.", link: "" },
     { type: "award", year: 2025, venue: "반도체공학회", authors: "{김동환}", title: "정진용 Scholarship Award", info: "반도체공학회, Nov. 2025.", link: "" },
@@ -552,7 +554,7 @@ window.AMPLIA = {
      note: 이름 옆 빨간 작은 글씨 · facts: [라벨, 값] 목록 · fit: "contain"이면 사진을 자르지 않고 흰 배경 위에 전체 표시                */
   honorary: [
     { en: "Seongwon Lee", ko: "이성원",
-      facts: [["Role", "Site maintenance"], ["Relationship", "Professor's wife"]], photo: "assets/img/members/seongwon-lee.jpg", fit: "contain" },
+      facts: [["Role", "Site maintenance"], ["Relationship", "The professor's wife"]], photo: "assets/img/members/seongwon-lee.jpg", fit: "contain" },
     { en: "Totti Lee", ko: "이또띠",
       facts: [["Role", "Cutie"], ["Relationship", "The professor's wife's sister's cat"]], photo: "assets/img/members/totti-lee.jpg" }
   ],

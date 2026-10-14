@@ -238,6 +238,25 @@
     </div>`;
   }
 
+  const CHIP_STATUS_TAG = { "In Design": "tag--amber", "In Fabrication": "tag--blue", "Under Test": "tag--teal" };
+  function renderChipProgress() {
+    const box = $("#chipProgress");
+    if (!box) return;
+    const p = D.chipInProgress || {};
+    const list = p.items || [];
+    if (!list.length) { box.innerHTML = ""; return; }
+    box.innerHTML = `<div class="pub-progress chip-progress">
+      <div class="chip-progress__head">
+        <h4 class="pub-progress__title"><span class="live-dot" aria-hidden="true"></span>In Progress</h4>
+        ${p.updated ? `<span class="news-meta__live chip-progress__updated">Updated <b>${esc(p.updated)}</b></span>` : ""}
+      </div>
+      <ul>${list.map((x) => `<li>
+        <span class="tag ${CHIP_STATUS_TAG[x.status] || "tag--line"}">${esc(x.status)}</span>
+        <span class="pub-progress__text">${esc(x.name)}${x.process ? `, ${esc(x.process)}` : ""}</span>
+      </li>`).join("")}</ul>
+    </div>`;
+  }
+
   function pubItem(p, i) {
     const t = TYPE[p.type];
     const title = p.link
@@ -321,6 +340,7 @@
   function renderGallery() {
     const chips = D.chips || [];
     if ($("#chipGrid")) $("#chipGrid").innerHTML = chips.map(chipCard).join("");
+    renderChipProgress();
     if ($("#chipGridHome")) $("#chipGridHome").innerHTML = chips.slice(0, CHIP_PREVIEW).map(chipCard).join("");
     setCount("chips", chips.length, "chips");
 

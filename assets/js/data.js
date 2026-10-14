@@ -549,6 +549,27 @@ window.AMPLIA = {
       facts: [["Role", "Cutie"], ["Relationship", "The professor's wife's sister's cat"]], photo: "assets/img/members/totti-lee.jpg" }
   ],
 
+  /* Chip Gallery 상단 "In Progress" 박스
+     status: In Design · In Fabrication · Under Test (뱃지 색이 구분됨)
+     updated: 박스 우측에 "Updated 날짜"로 표시 — 목록을 고칠 때 함께 바꿔 주세요 */
+  chipInProgress: {
+    updated: "2026.10",
+    items: [
+      { status: "Under Test", name: "Automotive Imager", process: "90nm" },
+      { status: "Under Test", name: "RRAM PIM", process: "0.13μm" },
+      { status: "Under Test", name: "Sensor ROIC", process: "0.18μm" },
+      { status: "Under Test", name: "ΔΣ ADC", process: "0.18μm" },
+      { status: "Under Test", name: "Biopotential AFE", process: "28nm" },
+      { status: "In Fabrication", name: "Zoom ADC", process: "0.18μm" },
+      { status: "In Fabrication", name: "NS-SAR ADC", process: "0.18μm" },
+      { status: "In Fabrication", name: "High Speed LDO", process: "28nm" },
+      { status: "In Fabrication", name: "Displacement IC", process: "0.13μm" },
+      { status: "In Design", name: "Biopotential AFE", process: "28nm" },
+      { status: "In Design", name: "High Speed ADC", process: "12nm" },
+      { status: "In Design", name: "Zoom ADC", process: "0.18μm" }
+    ]
+  },
+
   /* ---------------- Chip Gallery ----------------
      값이 있는 항목만 카드에 표시됩니다: process · pub(게재처) · year(게재처가 없을 때) · area
      맨 위 4개는 홈 화면 Chip Gallery에도 표시됩니다 (최신 칩을 맨 위에 추가)

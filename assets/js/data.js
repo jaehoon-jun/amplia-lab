@@ -549,24 +549,25 @@ window.AMPLIA = {
       facts: [["Role", "Cutie"], ["Relationship", "The professor's wife's sister's cat"]], photo: "assets/img/members/totti-lee.jpg" }
   ],
 
-  /* Chip Gallery 상단 "In Progress" 박스
+  /* Chip Gallery 상단 "In Progress" 박스 — 상태별 3단 보드
      status: In Design · In Fabrication · Under Test (뱃지 색이 구분됨)
+     칸 순서는 목록에 상태가 처음 나오는 순서를 따릅니다
      updated: 박스 우측에 "Updated 날짜"로 표시 — 목록을 고칠 때 함께 바꿔 주세요 */
   chipInProgress: {
     updated: "2026.10",
     items: [
-      { status: "Under Test", name: "Automotive Imager", process: "90nm" },
+      { status: "In Design", name: "Biopotential AFE", process: "28nm" },
+      { status: "In Design", name: "High-Speed ADC for Wireline Links", process: "12nm" },
+      { status: "In Design", name: "Zoom ADC for Audio", process: "0.18μm" },
+      { status: "In Fabrication", name: "Zoom ADC for Sensor Interfaces", process: "0.18μm" },
+      { status: "In Fabrication", name: "NS-SAR ADC for ECoG", process: "0.18μm" },
+      { status: "In Fabrication", name: "High-Speed LDO", process: "28nm" },
+      { status: "In Fabrication", name: "Displacement Sensor IC", process: "0.13μm" },
+      { status: "Under Test", name: "Automotive CIS", process: "90nm" },
       { status: "Under Test", name: "RRAM PIM", process: "0.13μm" },
       { status: "Under Test", name: "Sensor ROIC", process: "0.18μm" },
-      { status: "Under Test", name: "ΔΣ ADC", process: "0.18μm" },
-      { status: "Under Test", name: "Biopotential AFE", process: "28nm" },
-      { status: "In Fabrication", name: "Zoom ADC", process: "0.18μm" },
-      { status: "In Fabrication", name: "NS-SAR ADC", process: "0.18μm" },
-      { status: "In Fabrication", name: "High Speed LDO", process: "28nm" },
-      { status: "In Fabrication", name: "Displacement IC", process: "0.13μm" },
-      { status: "In Design", name: "Biopotential AFE", process: "28nm" },
-      { status: "In Design", name: "High Speed ADC", process: "12nm" },
-      { status: "In Design", name: "Zoom ADC", process: "0.18μm" }
+      { status: "Under Test", name: "ΔΣ ADC for Sensor Interfaces", process: "0.18μm" },
+      { status: "Under Test", name: "Biopotential AFE", process: "28nm" }
     ]
   },
 

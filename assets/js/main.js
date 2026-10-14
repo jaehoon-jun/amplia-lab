@@ -245,15 +245,19 @@
     const p = D.chipInProgress || {};
     const list = p.items || [];
     if (!list.length) { box.innerHTML = ""; return; }
-    box.innerHTML = `<div class="pub-progress chip-progress">
+    const statuses = [...new Set(list.map((x) => x.status))];
+    box.innerHTML = `<div class="chip-progress">
       <div class="chip-progress__head">
-        <h4 class="pub-progress__title"><span class="live-dot" aria-hidden="true"></span>In Progress</h4>
+        <h4 class="chip-progress__title"><span class="live-dot" aria-hidden="true"></span>In Progress</h4>
         ${p.updated ? `<span class="news-meta__live chip-progress__updated">Updated <b>${esc(p.updated)}</b></span>` : ""}
       </div>
-      <ul>${list.map((x) => `<li>
-        <span class="tag ${CHIP_STATUS_TAG[x.status] || "tag--line"}">${esc(x.status)}</span>
-        <span class="pub-progress__text">${esc(x.name)}${x.process ? `, ${esc(x.process)}` : ""}</span>
-      </li>`).join("")}</ul>
+      <div class="chip-board">${statuses.map((s) => {
+        const items = list.filter((x) => x.status === s);
+        return `<div class="chip-board__col">
+          <div class="chip-board__head"><span class="tag ${CHIP_STATUS_TAG[s] || "tag--line"}">${esc(s)}</span><span class="chip-board__count">${items.length}</span></div>
+          <ul>${items.map((x) => `<li><span>${esc(x.name)}</span>${x.process ? `<span class="chip-board__proc">${esc(x.process)}</span>` : ""}</li>`).join("")}</ul>
+        </div>`;
+      }).join("")}</div>
     </div>`;
   }
 

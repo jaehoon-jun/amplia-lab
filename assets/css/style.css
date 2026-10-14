@@ -533,6 +533,7 @@ body[data-page="research"] .projects > div:first-child .tag--slate { color: var(
 .timeline .org { color: var(--ink-2); margin-top: 2px; }
 .timeline .extra { margin-top: 10px; font-size: 14px; color: var(--muted); display: grid; gap: 3px; }
 .timeline .extra span b { font-family: var(--label); font-variant-numeric: tabular-nums; font-size: 12px; font-weight: 500; letter-spacing: .01em; color: var(--faint); margin-right: 8px; }
+.timeline--plain li { grid-template-columns: minmax(0, 1fr); }
 .awards li { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
 .awards .yr { font-family: var(--label); font-variant-numeric: tabular-nums; font-size: 14px; color: var(--ink-2); }
 .awards .t { font-weight: 600; }

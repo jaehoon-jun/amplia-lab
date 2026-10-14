@@ -346,7 +346,7 @@
     if ($("#chipGrid")) $("#chipGrid").innerHTML = chips.map(chipCard).join("");
     renderChipProgress();
     if ($("#chipGridHome")) $("#chipGridHome").innerHTML = chips.slice(0, CHIP_PREVIEW).map(chipCard).join("");
-    setCount("chips", chips.length, "chips");
+    setCount("chips", chips.length, "Fabricated Chips");
 
     // total shots across all albums, placeholders ("") not counted
     setCount("photos", TEAM.reduce((sum, p) => sum + p.list.filter(Boolean).length, 0), "photos");

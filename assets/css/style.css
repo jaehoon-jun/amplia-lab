@@ -657,11 +657,11 @@ body[data-page="research"] .projects > div:first-child .sub-head h3 { color: inh
 @media (prefers-reduced-motion: reduce) { .chip-board__col:hover { transform: none; } }
 .chip-board__head { display: flex; align-items: center; justify-content: space-between; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
 .chip-board__head .tag { background: #fff; transition: background-color .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease); }
-/* hovering a card fills its status badge with the badge colour */
-.chip-board__col:hover .tag--amber { background: var(--amber); border-color: var(--amber); color: #fff; }
-.chip-board__col:hover .tag--blue  { background: var(--blue);  border-color: var(--blue);  color: #fff; }
-.chip-board__col:hover .tag--teal  { background: var(--teal);  border-color: var(--teal);  color: #fff; }
-.chip-board__col:hover .tag--line  { background: var(--muted); border-color: var(--muted); color: #fff; }
+/* hovering a card fills its status badge with the tinted fill used by the home "Latest News" badges */
+.chip-board__col:hover .tag--amber { background: var(--amber-50); border-color: #ecdfc0; }
+.chip-board__col:hover .tag--blue  { background: var(--blue-50);  border-color: var(--blue-100); }
+.chip-board__col:hover .tag--teal  { background: var(--teal-50);  border-color: #c7e2de; }
+.chip-board__col:hover .tag--line  { background: var(--panel);    border-color: var(--line); }
 .chip-board__count { font-size: 13px; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
 .chip-board li { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 8px 0; font-size: 15px; line-height: 1.45; color: var(--ink-2); }
 .chip-board li + li { border-top: 1px solid var(--line); }

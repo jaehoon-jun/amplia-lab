@@ -652,12 +652,21 @@ body[data-page="research"] .projects > div:first-child .tag--slate { color: var(
    Gallery
    ========================================================================== */
 .gallery-group + .gallery-group { margin-top: 72px; }
-.chip-progress { margin-top: 24px; padding: 20px 24px; background: #e4edf7; border: 1px solid #cddbea; border-radius: 8px; }
-.chip-progress__head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
-.chip-progress__title { font-size: 15px; font-weight: 700; color: var(--blue-deep); }
-.chip-progress__updated { font-size: 14px; }
+.chip-progress { padding: clamp(24px, 3.5vw, 40px) clamp(20px, 3.5vw, 44px) clamp(20px, 3vw, 36px); background: #e4edf7; border: 1px solid #cddbea; border-radius: 8px; }
+/* Chip Gallery: board sits above the "Chip Gallery" heading */
+#chipProgress:not(:empty) { margin-bottom: clamp(56px, 7vw, 80px); }
+/* Research page: same board placed above On-Going Projects */
+[data-chip-progress] .chip-progress { margin-top: clamp(64px, 8vw, 96px); }
+[data-chip-progress]:not(:empty) + .projects { margin-top: clamp(56px, 7vw, 80px); }
+/* heading + "Updated" styled like the On-Going Projects sub-head and its "00 active" count */
+.chip-progress__head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-bottom: 16px; margin-bottom: 20px; border-bottom: 1px solid var(--blue); }
+.chip-progress__title { font-size: 22px; font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; color: var(--blue-deep); }
+.chip-progress__updated,
+.chip-progress__updated b { font-family: var(--label); font-variant-numeric: tabular-nums; font-size: 13px; font-weight: 400; color: var(--muted); letter-spacing: .01em; }
 .chip-board { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-.chip-board__col { background: #fff; border: 1px solid #cddbea; border-radius: 6px; padding: 14px 16px 8px; }
+.chip-board__col { background: #fff; border: 1px solid #cddbea; border-radius: 6px; padding: 14px 16px 8px; transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease); }
+.chip-board__col:hover { transform: translateY(-4px); border-color: var(--blue); box-shadow: 0 18px 32px -22px rgba(15, 27, 42, .4); }
+@media (prefers-reduced-motion: reduce) { .chip-board__col:hover { transform: none; } }
 .chip-board__head { display: flex; align-items: center; justify-content: space-between; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
 .chip-board__head .tag { background: #fff; }
 .chip-board__count { font-size: 13px; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }

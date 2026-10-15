@@ -239,16 +239,17 @@
   }
 
   const CHIP_STATUS_TAG = { "In Design": "tag--amber", "In Fabrication": "tag--blue", "Under Test": "tag--teal" };
+  // shared by the Chip Gallery (#chipProgress) and the Research page ([data-chip-progress])
   function renderChipProgress() {
-    const box = $("#chipProgress");
-    if (!box) return;
+    const boxes = $$("#chipProgress, [data-chip-progress]");
+    if (!boxes.length) return;
     const p = D.chipInProgress || {};
     const list = p.items || [];
-    if (!list.length) { box.innerHTML = ""; return; }
+    if (!list.length) { boxes.forEach((b) => { b.innerHTML = ""; }); return; }
     const statuses = [...new Set(list.map((x) => x.status))];
-    box.innerHTML = `<div class="chip-progress">
+    const html = `<div class="chip-progress">
       <div class="chip-progress__head">
-        <h4 class="chip-progress__title"><span class="live-dot" aria-hidden="true"></span>In Progress</h4>
+        <h4 class="chip-progress__title"><span class="live-dot" aria-hidden="true"></span>Chips in the Pipeline</h4>
         ${p.updated ? `<span class="news-meta__live chip-progress__updated">Updated <b>${esc(p.updated)}</b></span>` : ""}
       </div>
       <div class="chip-board">${statuses.map((s) => {
@@ -259,6 +260,7 @@
         </div>`;
       }).join("")}</div>
     </div>`;
+    boxes.forEach((b) => { b.innerHTML = html; });
   }
 
   function pubItem(p, i) {

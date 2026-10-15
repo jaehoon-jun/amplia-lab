@@ -559,7 +559,7 @@ window.AMPLIA = {
       facts: [["Role", "Cutie"], ["Relationship", "The professor's wife's sister's cat"]], photo: "assets/img/members/totti-lee.jpg" }
   ],
 
-  /* Chip Gallery 상단 "In Progress" 박스 — 상태별 3단 보드
+  /* Chip Gallery 상단 "Chips in the Pipeline" 박스 — 상태별 3단 보드
      status: In Design · In Fabrication · Under Test (뱃지 색이 구분됨)
      칸 순서는 목록에 상태가 처음 나오는 순서를 따릅니다
      updated: 박스 우측에 "Updated 날짜"로 표시 — 목록을 고칠 때 함께 바꿔 주세요 */

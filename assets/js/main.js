@@ -260,7 +260,9 @@
         </div>`;
       }).join("")}</div>
     </div>`;
-    boxes.forEach((b) => { b.innerHTML = html; });
+    // the Research page copy gets a link to the Chip Gallery below the board
+    const link = `<div class="chip-progress__more"><a href="gallery.html#chip-gallery" class="btn btn--primary">Chip Gallery <svg><use href="#i-chevron"/></svg></a></div>`;
+    boxes.forEach((b) => { b.innerHTML = b.id === "chipProgress" ? html : html.replace(/<\/div>$/, `${link}</div>`); });
   }
 
   function pubItem(p, i) {

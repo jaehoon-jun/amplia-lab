@@ -358,21 +358,8 @@ body[data-page="professor"] .contact-list { max-width: 560px; }
   body[data-page="professor"] .prof__card .photo { max-width: 240px; }
 }
 .sub-head--interests { margin-bottom: 24px; }
-/* Research page: highlight the on-going projects block */
-body[data-page="research"] .projects > div:first-child {
-  background: #e4edf7;
-  border: 1px solid #cddbea;
-  border-radius: 8px;
-  padding: clamp(24px, 3.5vw, 40px) clamp(20px, 3.5vw, 44px) clamp(16px, 2.5vw, 28px);
-}
-body[data-page="research"] .projects > div:first-child .sub-head { border-bottom-color: var(--blue); }
-body[data-page="research"] .projects > div:first-child .sub-head h3 { color: var(--blue-deep); }
-body[data-page="research"] .projects > div:first-child .proj-list li { border-bottom-color: #cddbea; }
-body[data-page="research"] .projects > div:first-child .proj-list li:last-child { border-bottom: 0; }
-body[data-page="research"] .projects > div:first-child .proj-list li:hover { background: rgba(255, 255, 255, .7); }
-body[data-page="research"] .projects > div:first-child .tag--blue,
-body[data-page="research"] .projects > div:first-child .tag--slate { background: #fff; }
-body[data-page="research"] .projects > div:first-child .tag--slate { color: var(--blue); border-color: var(--blue-100); }
+/* Research page: on-going projects heading plain, like Completed Projects */
+body[data-page="research"] .projects > div:first-child .sub-head h3 { color: inherit; }
 
 /* Stat bar */
 
@@ -663,6 +650,7 @@ body[data-page="research"] .projects > div:first-child .tag--slate { color: var(
 .chip-progress__title { font-size: 22px; font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; color: var(--blue-deep); }
 .chip-progress__updated,
 .chip-progress__updated b { font-family: var(--label); font-variant-numeric: tabular-nums; font-size: 13px; font-weight: 400; color: var(--muted); letter-spacing: .01em; }
+.chip-progress__more { margin-top: 20px; display: flex; justify-content: center; }
 .chip-board { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .chip-board__col { background: #fff; border: 1px solid #cddbea; border-radius: 6px; padding: 14px 16px 8px; transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease); }
 .chip-board__col:hover { transform: translateY(-4px); border-color: var(--blue); box-shadow: 0 18px 32px -22px rgba(15, 27, 42, .4); }

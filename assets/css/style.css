@@ -61,10 +61,16 @@ p { margin: 0; }
 .num { font-family: var(--label); font-variant-numeric: tabular-nums; }
 .ext-link { display: inline-flex; align-items: center; gap: 5px; }
 .ext-icon { width: 13px; height: 13px; flex: none; }
-.copy-mail { position: relative; }
-.copy-mail.is-copied .ext-icon { color: var(--blue); }
-.copy-mail::after { content: "Copied!"; position: absolute; left: 0; bottom: 100%; margin-bottom: 4px; padding: 2px 7px; border-radius: 4px; background: var(--ink-2); color: #fff; font-family: var(--label); font-size: 11px; line-height: 1.5; white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity .2s; }
-.copy-mail.is-copied::after { opacity: 1; }
+.copy-mail, .copy-text { position: relative; }
+.copy-text { font: inherit; color: inherit; background: none; border: 0; padding: 0; margin: 0; text-align: left; cursor: pointer; }
+.contact-list .copy-text { color: var(--blue); transition: color .2s; }
+.contact-list .copy-text:hover { color: var(--blue-deep); text-decoration: underline; text-underline-offset: 3px; }
+.copy-cell { display: inline-flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+.copy-btn { padding: 4px; margin: -4px 0; border-radius: 4px; }
+.contact-list .copy-btn:hover { text-decoration: none; background: var(--tint); }
+.copy-mail.is-copied .ext-icon, .copy-text.is-copied .ext-icon { color: var(--blue); }
+.copy-mail::after, .copy-text::after { content: "Copied!"; position: absolute; left: 0; bottom: 100%; margin-bottom: 4px; padding: 2px 7px; border-radius: 4px; background: var(--ink-2); color: #fff; font-family: var(--label); font-size: 11px; line-height: 1.5; white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity .2s; }
+.copy-mail.is-copied::after, .copy-text.is-copied::after { opacity: 1; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 /* ---------- Labels ---------- */
@@ -350,12 +356,14 @@ body[data-page="home"] .subpage-only { display: none; }
 body[data-page="team"] #members { margin-top: 0 !important; }
 /* Professor page: photo + name/contacts side by side, CV below */
 body[data-page="professor"] .prof { grid-template-columns: minmax(0, 1fr); gap: clamp(56px, 7vw, 80px); }
-body[data-page="professor"] .prof__card { position: static; display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: clamp(28px, 4vw, 56px); align-items: end; }
+body[data-page="professor"] .prof__card { position: static; display: grid; grid-template-columns: 304px minmax(0, 1fr); gap: clamp(28px, 4vw, 56px); align-items: end; }
+body[data-page="professor"] .prof__card .photo { align-self: stretch; aspect-ratio: auto; }
 body[data-page="professor"] .prof__name { margin-top: 0; font-size: clamp(28px, 3vw, 36px); }
 body[data-page="professor"] .contact-list { max-width: 560px; }
+body[data-page="professor"] .contact-list li { grid-template-columns: 104px minmax(0, 1fr); }
 @media (max-width: 560px) {
   body[data-page="professor"] .prof__card { grid-template-columns: minmax(0, 1fr); }
-  body[data-page="professor"] .prof__card .photo { max-width: 240px; }
+  body[data-page="professor"] .prof__card .photo { max-width: 240px; aspect-ratio: 3 / 4; }
 }
 .sub-head--interests { margin-bottom: 24px; }
 /* Research page: on-going projects heading plain, like Completed Projects */

@@ -662,6 +662,26 @@
     });
   }
 
+  /* ---------------- Text: click to copy the value in data-copy (stored reversed + base64 so it isn't shown as plain text) ---------------- */
+  function initCopyText() {
+    document.addEventListener("click", (ev) => {
+      const el = ev.target.closest(".copy-text[data-copy]");
+      if (!el || !navigator.clipboard) return;
+      navigator.clipboard.writeText(atob(el.dataset.copy).split("").reverse().join("")).then(() => {
+        const use = $("use", el);
+        el.classList.add("is-copied");
+        el.title = "Copied!";
+        if (use) use.setAttribute("href", "#i-check");
+        clearTimeout(el._copyTimer);
+        el._copyTimer = setTimeout(() => {
+          el.classList.remove("is-copied");
+          el.title = "Copy";
+          if (use) use.setAttribute("href", "#i-copy");
+        }, 1500);
+      });
+    });
+  }
+
   /* ---------------- Init ---------------- */
   renderNews();
   renderMembers();
@@ -672,6 +692,7 @@
   $$("#pubTabs .tab").forEach((t) => t.addEventListener("click", () => setPubFilter(t.dataset.filter)));
 
   initCopyMail();
+  initCopyText();
   initNav();
   initHeroBg();
   initPageIndicator();

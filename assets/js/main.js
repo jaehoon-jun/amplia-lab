@@ -368,7 +368,49 @@
         const b = ev.target.closest("[data-album]");
         if (b) openAlbum(+b.dataset.album, b);
       });
+      fillTeamGrid();
+      let fillFrame;
+      window.addEventListener("resize", () => { cancelAnimationFrame(fillFrame); fillFrame = requestAnimationFrame(fillTeamGrid); });
     }
+  }
+
+  // Replays the grid's row-by-row placement; when a card can't fit in what's left of a row
+  // (or the last row isn't full), the card before the gap is widened so no empty cell remains.
+  function fillTeamGrid() {
+    const grid = $("#teamPhotos");
+    const cards = $$(".team-photo", grid);
+    cards.forEach((el) => { el.style.gridColumn = ""; });
+    const cols = getComputedStyle(grid).gridTemplateColumns.split(" ").length;
+    const span = (v) => (/span (\d+)/.exec(v) || [0, 1])[1] * 1;
+    const taken = [];
+    const isFree = (r, c, w, h) => {
+      for (let y = r; y < r + h; y++) for (let x = c; x < c + w; x++) if (x >= cols || (taken[y] && taken[y][x])) return false;
+      return true;
+    };
+    const mark = (r, c, w, h) => { for (let y = r; y < r + h; y++) for (let x = c; x < c + w; x++) (taken[y] = taken[y] || [])[x] = true; };
+    let row = 0, col = 0, prev = null;
+    const widenPrev = (r, upTo) => {
+      // only a one-row card that ends right where the gap starts can grow into it
+      if (!prev || prev.h !== 1 || prev.r !== r) return;
+      let end = prev.c + prev.w;
+      while (end < upTo && isFree(r, end, 1, 1)) end++;
+      if (end === prev.c + prev.w) return;
+      mark(r, prev.c + prev.w, end - prev.c - prev.w, 1);
+      prev.w = end - prev.c;
+      prev.el.style.gridColumn = `span ${prev.w}`;
+    };
+    cards.forEach((el) => {
+      const cs = getComputedStyle(el);
+      const w = Math.min(Math.max(span(cs.gridColumnStart), span(cs.gridColumnEnd)), cols), h = Math.max(span(cs.gridRowStart), span(cs.gridRowEnd));
+      let r = row, c = col;
+      while (!isFree(r, c, w, h)) { if (++c >= cols) { c = 0; r++; } }
+      if (r > row || c > col) widenPrev(row, r > row ? cols : c);
+      mark(r, c, w, h);
+      prev = { el, r, c, w, h };
+      row = r; col = c + w;
+      if (col >= cols) { col = 0; row++; }
+    });
+    if (col > 0) widenPrev(row, cols);
   }
 
   /* ---------------- Photo viewer ---------------- */

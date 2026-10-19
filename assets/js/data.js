@@ -610,6 +610,7 @@ window.AMPLIA = {
      사진 1장: photo: "경로"
      여러 장: photos: ["경로1", "경로2", ...]  → 카드에 장수 배지, 클릭 시 넘겨보기
      size: "wide" → 가로 2칸 · size: "large" → 가로 2칸 × 세로 2줄
+     행 끝에 빈칸이 생기면 바로 앞 사진이 자동으로 넓어집니다 (PC·모바일 각각 계산).
      빈 문자열("")은 사진 자리(placeholder)로 표시됩니다.                        */
   teamPhotos: [
     { caption: "미래형자동차 산학프로젝트 콘테스트, 대상 (KEA 회장상)", date: "2026.10", size: "large", photo: "assets/img/team/202610 KEA 회장상.jpg" },

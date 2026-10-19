@@ -615,9 +615,9 @@ window.AMPLIA = {
      빈 문자열("")은 사진 자리(placeholder)로 표시됩니다.                        */
   teamPhotos: [
     { caption: "미래형자동차 산학프로젝트 콘테스트, 대상 (KEA 회장상)", date: "2026.10", size: "large", celebrate: true, photo: "assets/img/team/202610 KEA 회장상.jpg" },
-    { caption: "IEEE ISOCC, Songdo", date: "2026.10", photo: "assets/img/team/202610 IEEE ISOCC.jpg" },
-    { caption: "ICT 챌린지 2026, 부총리 겸 과기부장관상", date: "2026.08", photo: "assets/img/team/202608 ict챌린지 장관상.jpg" },
+    { caption: "ICT 챌린지 2026, 부총리 겸 과기부장관상", date: "2026.08", size: "wide", photo: "assets/img/team/202608 ict챌린지 장관상.jpg" },
     { caption: "스승의 날, 회식", date: "2026.05", size: "wide", photos: ["assets/img/team/202605 스승의날1.jpg", "assets/img/team/202605 스승의날2.jpg"] },
+    { caption: "IEEE ISOCC, Songdo", date: "2026.10", photo: "assets/img/team/202610 IEEE ISOCC.jpg" },
     { caption: "KCS 2026, 정선, 최우수상", date: "2026.01", size: "wide", photos: ["assets/img/team/2601_KCS1.jpg", "assets/img/team/2601_KCS2.jpg"] },
     { caption: "IEEE/IEIE ICCE-Asia 2025, Busan, Two Best Paper Awards", date: "2025.11", photos: ["assets/img/team/2511_ICCEAISA1.jpg", "assets/img/team/2511_ICCEAISA2.jpg"] },
     { caption: "서바이벌", date: "2025.08", photos: ["assets/img/team/2508_MT1.jpg", "assets/img/team/2508_MT2.jpg", "assets/img/team/2508_MT4.jpg"] },

@@ -357,9 +357,10 @@
     if ($("#teamPhotos")) {
       $("#teamPhotos").innerHTML = TEAM.map((p, i) => {
         const n = p.list.length;
-        return `<figure class="team-photo${p.size ? ` team-photo--${esc(p.size)}` : ""} reveal" style="--d:${(i % 4) * 0.06}s;margin:0">
+        return `<figure class="team-photo${p.size ? ` team-photo--${esc(p.size)}` : ""}${p.celebrate ? " team-photo--celebrate" : ""} reveal" style="--d:${(i % 4) * 0.06}s;margin:0">
         ${p.list[0] ? `<img src="${esc(p.list[0])}" alt="${esc(p.caption)}" loading="lazy">` : `<div class="ph"><svg><use href="#i-image"/></svg></div>`}
         ${n > 1 ? `<span class="team-photo__count" aria-hidden="true">${ICON.stack}${n}</span>` : ""}
+        ${p.celebrate ? `<span class="celebrate-fx" aria-hidden="true"></span>` : ""}
         <figcaption>${esc(p.caption)}<span>${esc(p.date)}</span></figcaption>
         <button type="button" class="team-photo__open" data-album="${i}" aria-label="${esc(p.caption)}${n > 1 ? ` — 사진 ${n}장` : ""} 크게 보기"></button>
       </figure>`;
@@ -369,9 +370,82 @@
         if (b) openAlbum(+b.dataset.album, b);
       });
       fillTeamGrid();
+      initCelebrate();
       let fillFrame;
       window.addEventListener("resize", () => { cancelAnimationFrame(fillFrame); fillFrame = requestAnimationFrame(fillTeamGrid); });
     }
+  }
+
+  /* ---------------- Celebrate cards: party poppers fire confetti from the two top corners ----------------
+     once when the card scrolls into view, again on hover                                                  */
+  const CONFETTI_COLORS = ["#ffd166", "#ef476f", "#06d6a0", "#4cc9f0", "#f78c6b", "#9b5de5", "#ffffff"];
+  const POPPER_SVG = `<svg viewBox="0 0 34 24"><path d="M2 12 L30 2 Q34 12 30 22 Z" fill="#ffc43d"/><path d="M11 8.8 L15 7.4 L19 20.6 L15 19.2 Z M21 5.3 L25 3.8 L29 21.6 L25 20.2 Z" fill="#ef476f"/><ellipse cx="30" cy="12" rx="2.6" ry="10" fill="#e09f00"/></svg>`;
+  function initCelebrate() {
+    const cards = $$(".team-photo--celebrate");
+    if (!cards.length || reduceMotion || !Element.prototype.animate) return;
+    const obs = "IntersectionObserver" in window ? new IntersectionObserver((es) => es.forEach((e) => {
+      if (e.isIntersecting) { celebrate(e.target); obs.unobserve(e.target); }
+    }), { threshold: 0.5 }) : null;
+    cards.forEach((card) => {
+      if (obs) obs.observe(card); else celebrate(card);
+      card.addEventListener("mouseenter", () => celebrate(card));
+    });
+  }
+
+  function celebrate(card) {
+    const layer = $(".celebrate-fx", card);
+    if (!layer || layer.childElementCount) return; // let the current show finish
+    const { width: W, height: H } = layer.getBoundingClientRect();
+    const reach = Math.max(90, Math.hypot(W, H) * 0.32);
+    const add = (cls, css, html) => {
+      const s = document.createElement("span");
+      s.className = cls; Object.assign(s.style, css);
+      if (html) s.innerHTML = html;
+      layer.appendChild(s);
+      return s;
+    };
+    const run = (el, frames, opts) => { el.animate(frames, { fill: "both", ...opts }).onfinish = () => el.remove(); };
+    const inset = Math.min(W, H) * 0.04 + 4;
+    const size = Math.min(1.6, Math.max(1, Math.min(W, H) / 260)); // bigger poppers on bigger cards
+    [[inset, inset], [W - inset, inset]].forEach(([cx, cy], k) => {
+      const dir = Math.atan2(H / 2 - cy, W / 2 - cx), deg = (dir * 180) / Math.PI;
+      const delay = k * 90, fire = delay + 260;
+      const mx = cx + Math.cos(dir) * 26 * size, my = cy + Math.sin(dir) * 26 * size;
+      // popper: pops in, recoils when it fires, then fades
+      const popper = add("celebrate-fx__popper", { left: `${cx}px`, top: `${cy}px` }, POPPER_SVG);
+      const back = `translate(${-Math.cos(dir) * 6}px, ${-Math.sin(dir) * 6}px)`;
+      run(popper, [
+        { transform: `rotate(${deg}deg) scale(0)`, opacity: 0 },
+        { transform: `rotate(${deg}deg) scale(${1.15 * size})`, opacity: 1, offset: 0.12 },
+        { transform: `rotate(${deg}deg) scale(${size})`, offset: 0.18 },
+        { transform: `${back} rotate(${deg}deg) scale(${1.08 * size}, ${0.9 * size})`, offset: 0.24 },
+        { transform: `rotate(${deg}deg) scale(${size})`, opacity: 1, offset: 0.4 },
+        { transform: `rotate(${deg}deg) scale(${size})`, opacity: 0 }
+      ], { duration: 2000, delay, easing: "ease-out" });
+      // fanfare burst at the popper mouth
+      const burst = add("celebrate-fx__burst", { left: `${mx}px`, top: `${my}px` });
+      run(burst, [
+        { transform: `translate(-50%,-50%) rotate(${deg}deg) scale(.2)`, opacity: 0 },
+        { transform: `translate(-50%,-50%) rotate(${deg}deg) scale(1)`, opacity: 1, offset: 0.3 },
+        { transform: `translate(-50%,-50%) rotate(${deg}deg) scale(1.5)`, opacity: 0 }
+      ], { duration: 450, delay: fire, easing: "ease-out" });
+      // confetti: a cone of paper bits and streamers flying toward the centre, then drifting down
+      for (let i = 0; i < 26; i++) {
+        const a = dir + (Math.random() - 0.5) * 0.95, v = reach * (0.45 + Math.random() * 0.6);
+        const vx = Math.cos(a) * v, vy = Math.sin(a) * v, g = reach * (0.5 + Math.random() * 0.3);
+        const r = Math.random(), shape = r < 0.45 ? "strip" : r < 0.75 ? "dot" : "streamer";
+        const piece = add(`celebrate-fx__bit celebrate-fx__bit--${shape}`, { left: `${mx}px`, top: `${my}px`, background: CONFETTI_COLORS[(i + k) % CONFETTI_COLORS.length] });
+        const spin = (Math.random() - 0.5) * 900, flip = 360 + Math.random() * 720, sway = (Math.random() - 0.5) * 24;
+        run(piece, [0, 0.12, 0.3, 0.55, 0.8, 1].map((t) => {
+          const ease = 1 - (1 - t) ** 3;
+          return {
+            transform: `translate(${vx * ease + sway * Math.sin(t * 9)}px, ${vy * ease + g * t * t}px) rotate(${spin * t}deg) rotateX(${flip * t}deg)`,
+            opacity: t < 0.7 ? 1 : 1 - (t - 0.7) / 0.3,
+            offset: t
+          };
+        }), { duration: 1600 + Math.random() * 700, delay: fire + Math.random() * 60, easing: "linear" });
+      }
+    });
   }
 
   // Replays the grid's row-by-row placement; when a card can't fit in what's left of a row

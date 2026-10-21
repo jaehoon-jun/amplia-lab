@@ -363,7 +363,7 @@ body[data-page="professor"] .contact-list { max-width: 560px; }
 body[data-page="professor"] .contact-list li { grid-template-columns: 104px minmax(0, 1fr); }
 @media (max-width: 560px) {
   body[data-page="professor"] .prof__card { grid-template-columns: minmax(0, 1fr); }
-  body[data-page="professor"] .prof__card .photo { max-width: 240px; aspect-ratio: 3 / 4; }
+  body[data-page="professor"] .prof__card .photo { align-self: start; width: 100%; max-width: 240px; aspect-ratio: 3 / 4; } /* start, not stretch: Safari collapses a stretched photo to 0 height */
 }
 .sub-head--interests { margin-bottom: 24px; }
 /* Research page: on-going projects heading plain, like Completed Projects */
@@ -465,7 +465,6 @@ body[data-page="research"] .projects > div:first-child .sub-head h3 { color: inh
 .theme__body li::before { content: ""; position: absolute; left: 0; top: .58em; width: 8px; height: 8px; border-radius: 2px; background: var(--dot); }
 .theme__icon { position: absolute; right: -14px; bottom: -18px; z-index: 0; width: 168px; height: 168px; color: #fff; opacity: .14; transition: opacity .35s var(--ease), transform .35s var(--ease); }
 .theme:hover .theme__icon { opacity: .2; transform: rotate(-6deg) scale(1.05); }
-.interests-cta { margin-top: 32px; display: flex; justify-content: center; }
 @media (max-width: 860px) {
   .themes { grid-template-columns: 1fr; }
   .theme__body li { font-size: 16px; }

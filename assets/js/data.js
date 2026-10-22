@@ -21,7 +21,7 @@ window.AMPLIA = {
       { label: "4", url: "https://www.inha.ac.kr/kr/952/subview.do?&enc=Zm5jdDF8QEB8JTJGYmJzJTJGa3IlMkYxMSUyRjQ1MjkxJTJGYXJ0Y2xWaWV3LmRvJTNG" }
     ] },
     { date: "2026.07", type: "Funding", text: "New research grant: “차량용 고신뢰 고속 인터페이스 IP 기술 개발 (NRF)”." },
-    { date: "2026.07", type: "Research", text: "Three KR patents about “Analog PIM” have been applied.", who: "정현수, 최석준, 이강재, 유경석, 김동환" },
+    { date: "2026.07", type: "Research", text: "Three KR patents about “Analog PIM” have been applied.", who: "정현수, 이강재, 유경석, 김동환" },
     { date: "2026.04", type: "Research", text: "Paper about “Event-Driven TDC” has been accepted to IEEE TVLSI.", who: "김진하, 김세연" },
     { date: "2026.04", type: "Funding", text: "New research grant: “차세대 PIM 향 데이터 변환 회로 구조 연구 (IITP)”." },
     { date: "2026.02", type: "Research", text: "Paper about “SAR-Based Extended Counting ΔΣ ADC” has been accepted to IEEE ISCAS." },
@@ -137,7 +137,7 @@ window.AMPLIA = {
     /* ---- Journals: 2025 ---- */
     { type: "journal", year: 2025, venue: "IEEE Sensors J.",
       authors: "W. Kim, S. Park, J. Yang, J. Jun, S. Kim, and J. Rhee",
-      title: "A Wide Dynamic Range Optical Particulate Matter Sensor with On-chip Machine Learning Calibration",
+      title: "A Wide Dynamic Range Optical Particulate Matter Sensor with On-Chip Machine Learning Calibration",
       info: "IEEE Sensors Journal, vol. 25, no. 22, pp. 42018–42028, Nov. 2025.", link: "" },
     { type: "journal", kind: "book", year: 2025, venue: "Book",
       authors: "",

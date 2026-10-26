@@ -378,6 +378,9 @@ window.AMPLIA = {
       info: "US Registration No.: 10938408, Registration Date: Mar. 02. 2021.", link: "", status: "Technology Transferred" },
 
     /* ---- Patents: Registered Domestic ---- */
+    { type: "patent", category: "Registered Domestic Patents", year: 2026, venue: "KR Patent", authors: "J. Jun and J. Kim",
+      title: "전역 결정 피드백을 이용한 시스템 및 그 동작 방법",
+      info: "KR Application No.: 10-3035561, Application Date: Oct. 15. 2026.", link: "" },
     { type: "patent", category: "Registered Domestic Patents", year: 2026, venue: "KR Patent", authors: "J. Jun, C. Lee, and D. Lee",
       title: "레귤레이터",
       info: "KR Application No.: 10-3022653, Application Date: Sept. 16. 2026.", link: "" },

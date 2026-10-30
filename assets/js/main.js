@@ -358,7 +358,7 @@
       $("#teamPhotos").innerHTML = TEAM.map((p, i) => {
         const n = p.list.length;
         return `<figure class="team-photo${p.size ? ` team-photo--${esc(p.size)}` : ""}${p.celebrate ? " team-photo--celebrate" : ""} reveal" style="--d:${(i % 4) * 0.06}s;margin:0">
-        ${p.list[0] ? `<img src="${esc(p.list[0])}" alt="${esc(p.caption)}" loading="lazy">` : `<div class="ph"><svg><use href="#i-image"/></svg></div>`}
+        ${p.list[0] ? `<img src="${esc(p.list[0])}" alt="${esc(p.caption)}" loading="lazy"${p.focus ? ` style="object-position:${esc(p.focus)}"` : ""}>` : `<div class="ph"><svg><use href="#i-image"/></svg></div>`}
         ${n > 1 ? `<span class="team-photo__count" aria-hidden="true">${ICON.stack}${n}</span>` : ""}
         ${p.celebrate ? `<span class="celebrate-fx" aria-hidden="true"></span>` : ""}
         <figcaption>${esc(p.caption)}<span>${esc(p.date)}</span></figcaption>

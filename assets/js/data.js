@@ -613,14 +613,16 @@ window.AMPLIA = {
      사진 1장: photo: "경로"
      여러 장: photos: ["경로1", "경로2", ...]  → 카드에 장수 배지, 클릭 시 넘겨보기
      size: "wide" → 가로 2칸 · size: "large" → 가로 2칸 × 세로 2줄
+     focus: "center 30%" → 썸네일에서 보일 위치 (0% 맨 위 ~ 100% 맨 아래, 기본은 가운데)
      celebrate: true → 지정한 사진에만 위쪽 두 모서리 폭죽·팡파레 효과 (화면에 보일 때, 마우스를 올릴 때)
      행 끝에 빈칸이 생기면 바로 앞 사진이 자동으로 넓어집니다 (PC·모바일 각각 계산).
      빈 문자열("")은 사진 자리(placeholder)로 표시됩니다.                        */
   teamPhotos: [
-    { caption: "미래형자동차 산학프로젝트 콘테스트, 대상 (KEA 회장상)", date: "2026.10", size: "large", celebrate: true, photo: "assets/img/team/202610 KEA 회장상.jpg" },
-    { caption: "ICT 챌린지 2026, 부총리 겸 과기부장관상", date: "2026.08", size: "wide", photo: "assets/img/team/202608 ict챌린지 장관상.jpg" },
-    { caption: "스승의 날, 회식", date: "2026.05", size: "wide", photos: ["assets/img/team/202605 스승의날1.jpg", "assets/img/team/202605 스승의날2.jpg"] },
+    { caption: "IEEE APCCAS, Fukuoka, Japan", date: "2026.10", size: "wide", focus: "center 33%", photos: ["assets/img/team/202610 IEEE APCCAS1.jpg", "assets/img/team/202610 IEEE APCCAS2.jpg", "assets/img/team/202610 IEEE APCCAS3.jpg"] },
+    { caption: "미래형자동차 산학프로젝트 콘테스트, 대상 (KEA 회장상)", date: "2026.10", photo: "assets/img/team/202610 KEA 회장상.jpg" },
     { caption: "IEEE ISOCC, Songdo", date: "2026.10", photo: "assets/img/team/202610 IEEE ISOCC.jpg" },
+    { caption: "ICT 챌린지 2026, 부총리 겸 과기부장관상", date: "2026.08", photo: "assets/img/team/202608 ict챌린지 장관상.jpg" },
+    { caption: "스승의 날, 회식", date: "2026.05", photos: ["assets/img/team/202605 스승의날1.jpg", "assets/img/team/202605 스승의날2.jpg"] },
     { caption: "KCS 2026, 정선, 최우수상", date: "2026.01", size: "wide", photos: ["assets/img/team/2601_KCS1.jpg", "assets/img/team/2601_KCS2.jpg"] },
     { caption: "IEEE/IEIE ICCE-Asia 2025, Busan, Two Best Paper Awards", date: "2025.11", photos: ["assets/img/team/2511_ICCEAISA1.jpg", "assets/img/team/2511_ICCEAISA2.jpg"] },
     { caption: "서바이벌", date: "2025.08", photos: ["assets/img/team/2508_MT1.jpg", "assets/img/team/2508_MT2.jpg", "assets/img/team/2508_MT4.jpg"] },

@@ -410,6 +410,9 @@ window.AMPLIA = {
       info: "KR Registration No.: 10-1846781, Registration Date: Apr. 02. 2018.", link: "" },
 
     /* ---- Patents: Applied Domestic ---- */
+    { type: "patent", category: "Applied Domestic Patents", year: 2026, venue: "KR Patent", authors: "J. Lee, M. Yu, Y. Shin, and J. Jun",
+      title: "메모리 접근과 연산의 분리 실행을 지원하는 프로그래머블 DRAM 기반 PIM 장치 및 그 동작 방법",
+      info: "KR Application No.: 10-2026-0214186, Application Date: Oct. 30. 2026.", link: "" },
     { type: "patent", category: "Applied Domestic Patents", year: 2026, venue: "KR Patent", authors: "J. Jun, S. Kim, and J. Kim",
       title: "이벤트 구동형 TDC 기반 하이브리드 고해상도 카운터",
       info: "KR Application No.: 10-2026-0105206, Application Date: Jun. 10. 2026.", link: "" },

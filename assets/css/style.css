@@ -164,7 +164,7 @@ p { margin: 0; }
 .nav__inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 
 .brand { display: inline-flex; align-items: center; gap: 10px; }
-.brand__mark { width: 30px; height: 30px; color: var(--blue); display: block; object-fit: contain; }
+.brand__mark { width: auto; height: 44px; color: var(--blue); display: block; object-fit: contain; }
 .brand__mark--white { display: none; }
 .nav:not(.is-scrolled):not(.is-open) .brand__mark--color { display: none; }
 .nav:not(.is-scrolled):not(.is-open) .brand__mark--white { display: block; }
@@ -901,7 +901,7 @@ body[data-page="research"] .projects > div:first-child .sub-head h3 { color: inh
 .footer { background: var(--blue-deep); color: #fff; margin-top: 0; --logo-slash: var(--blue-deep); }
 .footer__main { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 19px 0 20px; text-align: center; }
 .footer__brand { display: inline-flex; align-items: center; gap: 12px; color: #fff; }
-.footer__mark { width: 40px; height: 40px; color: #fff; display: block; object-fit: contain; }
+.footer__mark { width: auto; height: 56px; color: #fff; display: block; object-fit: contain; }
 .footer__name { font-weight: 800; font-size: 26px; letter-spacing: .02em; }
 .footer__sub { text-align: left; font-size: 12.5px; line-height: 1.35; color: #c9d8e8; border-left: 1px solid rgba(255, 255, 255, .25); padding-left: 12px; }
 .footer__copy { margin: 0; line-height: 1.2; font-family: var(--label); font-variant-numeric: tabular-nums; font-size: 13px; color: #b9cadb; }

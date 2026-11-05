@@ -615,6 +615,7 @@ window.AMPLIA = {
      행 끝에 빈칸이 생기면 바로 앞 사진이 자동으로 넓어집니다 (PC·모바일 각각 계산).
      빈 문자열("")은 사진 자리(placeholder)로 표시됩니다.                        */
   teamPhotos: [
+    { caption: "KEIT 과제 워크샵, 벨포레", date: "2026.11", size: "wide", focus: "center 70%", photos: ["assets/img/team/202611 KEIT 워크샵1.jpg", "assets/img/team/202611 KEIT 워크샵2.jpg"] },
     { caption: "IEEE APCCAS, Fukuoka, Japan", date: "2026.10", size: "wide", focus: "center 33%", photos: ["assets/img/team/202610 IEEE APCCAS1.jpg", "assets/img/team/202610 IEEE APCCAS2.jpg", "assets/img/team/202610 IEEE APCCAS3.jpg"] },
     { caption: "미래형자동차 산학프로젝트 콘테스트, 대상 (KEA 회장상)", date: "2026.10", photo: "assets/img/team/202610 KEA 회장상.jpg" },
     { caption: "IEEE ISOCC, Songdo", date: "2026.10", photo: "assets/img/team/202610 IEEE ISOCC.jpg" },

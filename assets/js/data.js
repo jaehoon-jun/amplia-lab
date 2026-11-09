@@ -378,6 +378,9 @@ window.AMPLIA = {
       info: "US Registration No.: 10938408, Registration Date: Mar. 02. 2021.", link: "", status: "Technology Transferred" },
 
     /* ---- Patents: Registered Domestic ---- */
+    { type: "patent", category: "Registered Domestic Patents", year: 2026, venue: "KR Patent", authors: "J. Jun and {J. Jo}",
+      title: "계측증폭기",
+      info: "KR Application No.: 10-3043853, Application Date: Nov. 02. 2026.", link: "" },
     { type: "patent", category: "Registered Domestic Patents", year: 2026, venue: "KR Patent", authors: "J. Jun and J. Kim",
       title: "전역 결정 피드백을 이용한 시스템 및 그 동작 방법",
       info: "KR Application No.: 10-3035561, Application Date: Oct. 15. 2026.", link: "" },
@@ -434,9 +437,6 @@ window.AMPLIA = {
     { type: "patent", category: "Applied Domestic Patents", year: 2025, venue: "KR Patent", authors: "J. Kang, H. Lee, J. Jun, and S. Kim",
       title: "내부 회로 구조를 동적으로 선택할 수 있는 델타 시그마 변조기 및 이를 포함하는 아날로그 디지털 변환기",
       info: "KR Application No.: 10-2025-0019159, Application Date: Feb. 14. 2025.", link: "" },
-    { type: "patent", category: "Applied Domestic Patents", year: 2024, venue: "KR Patent", authors: "J. Jun, and {J. Jo}",
-      title: "계측 증폭기",
-      info: "KR Application No.: 10-2024-0146626, Application Date: Oct. 24. 2024.", link: "" },
     { type: "patent", category: "Applied Domestic Patents", year: 2024, venue: "KR Patent", authors: "J. Jun, S. Kim, and {J. Jo}",
       title: "사전 증폭 미세 조정 선형 레귤레이터 및 그 동작 방법",
       info: "KR Application No.: 10-2024-0073278, Application Date: Jun. 4. 2024.", link: "" },

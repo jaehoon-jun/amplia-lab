@@ -11,6 +11,7 @@ window.AMPLIA = {
      제목 옆 "Updated 날짜"는 맨 위 항목의 날짜로 자동 표시됩니다
      홈 화면에는 최근 7개가 보이고, "View more"를 누를 때마다 5개씩 더 보입니다 (NEWS_FIRST · NEWS_STEP, main.js)  */
   news: [
+    { date: "2026.11", type: "Research", text: "Paper about “Read-Out IC for Bridge Transducers” has been accepted to IEEE TCAS-I.", who: "정현수, 심건희" },
     { date: "2026.10", type: "Award", text: "미래형자동차 산학프로젝트 콘테스트 대상 (KEA 회장상) (Top Award).", who: "이강재, 김진하, 유경석, 김동환" },
     { date: "2026.10", type: "Research", text: "Paper about “Biopotential AFE” has been accepted to IEEE TCAS-II.", who: "조정국, 유경석" },
     { date: "2026.09", type: "Funding", text: "New research grant: “석사과정생연구장려금 (NRF)”.", who: "이강재" },
@@ -109,6 +110,10 @@ window.AMPLIA = {
 
   publications: [
     /* ---- Journals: 2026 ---- */
+    { type: "journal", year: 2026, venue: "IEEE TCAS-I",
+      authors: "J. Kang†, {H. Chung}†, {S. Choi}, {K. Sim}, H. Lee, and {J. Jun}",
+      title: "A 22.1-bit Energy-Efficient Read-Out IC With Multi-Mode ΔΣ Modulator Achieving 8-ppm INL, 0.11-μV Offset, and 1.45-nV/°C Offset Drift for Precision Measurement Systems",
+      info: "IEEE Transactions on Circuits and Systems I (TCAS-I), 2026.", link: "", status: "Accepted" },
     { type: "journal", year: 2026, venue: "IEEE TCAS-II",
       authors: "{J. Jo}†, {G. Yu}†, and J. Jun*",
       title: "A 1.5-μVrms Input-Referred-Ripple Capacitively-Coupled Chopper Instrumentation Amplifier With 12-bit SAR-Assisted Direct Offset Cancellation Ripple Reduction Loop",

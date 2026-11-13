@@ -634,6 +634,50 @@
     mk("path", { d: "M1300 -400 L1300 1100", class: "hb-edge" }, edges);
   }
 
+  /* ---------------- Research icons: spikes travelling along a path ----------------
+     Driven by requestAnimationFrame instead of SVG <animateMotion> — iOS Safari stops
+     SMIL loops after the first run (e.g. after scrolling), so the loop never repeated there.
+     data-path: id of the path · data-dur: cycle (s) · data-begin: start offset (s)
+     data-move: share of the cycle spent travelling (then holds at the end)
+     data-fade: "start end" share of the cycle over which the spike fades out          */
+  function initIconMotion() {
+    const spikes = $$(".ic .spike[data-path]").map((el) => {
+      const path = document.getElementById(el.dataset.path);
+      if (!path) return null;
+      const fade = (el.dataset.fade || "").split(/\s+/).map(Number);
+      return { el, path, len: path.getTotalLength(), dur: +el.dataset.dur || 3, begin: +el.dataset.begin || 0,
+               move: +el.dataset.move || 1, fade: fade.length === 2 && fade.every((n) => !isNaN(n)) ? fade : null };
+    }).filter(Boolean);
+    if (!spikes.length || reduceMotion) return;
+    spikes.forEach((s) => s.el.style.opacity = "0"); // hidden until its first cycle starts
+    const icons = new Set(spikes.map((s) => s.el.ownerSVGElement));
+    const visible = new Set();
+    let frame = 0, t0 = 0;
+    const tick = (now) => {
+      if (!t0) t0 = now;
+      const t = (now - t0) / 1000;
+      spikes.forEach((s) => {
+        if (!visible.has(s.el.ownerSVGElement)) return;
+        const local = t - s.begin;
+        if (local < 0) return;
+        const p = (local % s.dur) / s.dur;
+        const pt = s.path.getPointAtLength(Math.min(p / s.move, 1) * s.len);
+        s.el.setAttribute("transform", `translate(${pt.x} ${pt.y})`);
+        let o = 1;
+        if (s.fade) o = p <= s.fade[0] ? 1 : p >= s.fade[1] ? 0 : 1 - (p - s.fade[0]) / (s.fade[1] - s.fade[0]);
+        s.el.style.opacity = String(o);
+      });
+      frame = visible.size ? requestAnimationFrame(tick) : 0;
+    };
+    const start = () => { if (!frame) frame = requestAnimationFrame(tick); };
+    if (!("IntersectionObserver" in window)) { icons.forEach((i) => visible.add(i)); start(); return; }
+    const obs = new IntersectionObserver((es) => {
+      es.forEach((e) => (e.isIntersecting ? visible.add(e.target) : visible.delete(e.target)));
+      if (visible.size) start();
+    });
+    icons.forEach((i) => obs.observe(i));
+  }
+
   /* ---------------- Reveal on scroll ---------------- */
   let revealObs;
   function initReveal() {
@@ -815,5 +859,6 @@
   initHeroBg();
   initPageIndicator();
   initReveal();
+  initIconMotion();
   initCounters();
 })();

@@ -111,7 +111,7 @@ window.AMPLIA = {
   publications: [
     /* ---- Journals: 2026 ---- */
     { type: "journal", year: 2026, venue: "IEEE TCAS-I",
-      authors: "J. Kang†, {H. Chung}†, {S. Choi}, {K. Sim}, H. Lee, and {J. Jun}",
+      authors: "J. Kang†, {H. Chung}†, {S. Choi}, {K. Sim}, H. Lee, and J. Jun*",
       title: "A 22.1-bit Energy-Efficient Read-Out IC With Multi-Mode ΔΣ Modulator Achieving 8-ppm INL, 0.11-μV Offset, and 1.45-nV/°C Offset Drift for Precision Measurement Systems",
       info: "IEEE Transactions on Circuits and Systems I (TCAS-I), 2026.", link: "", status: "Accepted" },
     { type: "journal", year: 2026, venue: "IEEE TCAS-II",
@@ -595,6 +595,7 @@ window.AMPLIA = {
     { name: "Event-Driven TDC", process: "28nm", pub: "IEEE TVLSI'26", year: "", area: "", photo: "assets/img/chips/event-driven-tdc.png" },
     { name: "High Speed D-LDO", process: "28nm", pub: "IEEE TPEL'26", year: "", area: "", photo: "assets/img/chips/high-speed-d-ldo.png" },
     { name: "Test Signal Generator", process: "28nm", pub: "IEEE TPEL'26", year: "", area: "", photo: "assets/img/chips/test-signal-generator.png" },
+    { name: "Ultrasonic Sensor", process: "0.13μm", pub: "IEEE Sensors Journal'26", year: "", area: "", photo: "assets/img/chips/ultrasonic-sensor.png" },
     { name: "PM Sensor", process: "0.13μm", pub: "IEEE Sensors Journal'25", year: "", area: "", photo: "assets/img/chips/pm-sensor.jpg" },
     { name: "Digitizer Array", process: "28nm", pub: "IEEE Sensors Journal'25", year: "", area: "", photo: "assets/img/chips/digitizer-array.png" },
     { name: "ΣΔ ADC", process: "0.18μm", pub: "IEEE Sensors Journal'25", year: "", area: "", photo: "assets/img/chips/sigma-delta-adc-2025.png" },

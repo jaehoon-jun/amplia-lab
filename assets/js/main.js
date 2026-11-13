@@ -358,7 +358,7 @@
       $("#teamPhotos").innerHTML = TEAM.map((p, i) => {
         const n = p.list.length;
         return `<figure class="team-photo${p.size ? ` team-photo--${esc(p.size)}` : ""}${p.celebrate ? " team-photo--celebrate" : ""} reveal" style="--d:${(i % 4) * 0.06}s;margin:0">
-        ${p.list[0] ? `<img src="${esc(p.list[0])}" alt="${esc(p.caption)}" loading="lazy"${p.focus ? ` style="object-position:${esc(p.focus)}"` : ""}>` : `<div class="ph"><svg><use href="#i-image"/></svg></div>`}
+        ${p.list[0] ? `<img src="${esc(thumbOf(p.list[0]))}" alt="${esc(p.caption)}" loading="lazy" decoding="async"${p.focus ? ` style="object-position:${esc(p.focus)}"` : ""}>` : `<div class="ph"><svg><use href="#i-image"/></svg></div>`}
         ${n > 1 ? `<span class="team-photo__count" aria-hidden="true">${ICON.stack}${n}</span>` : ""}
         ${p.celebrate ? `<span class="celebrate-fx" aria-hidden="true"></span>` : ""}
         <figcaption>${esc(p.caption)}<span>${esc(p.date)}</span></figcaption>
@@ -495,6 +495,8 @@
     next: `<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>`
   };
   // every event is an album: `photos` for several shots, `photo` for one
+  // grid cards and viewer thumbnails load the small copy in assets/img/team/thumb/
+  const thumbOf = (src) => src.replace(/^(assets\/img\/team\/)(?!thumb\/)/, "$1thumb/");
   const TEAM = (D.teamPhotos || []).map((p) => ({ ...p, list: p.photos && p.photos.length ? p.photos : [p.photo || ""] }));
   let lb = null, lbAlbum = 0, lbIdx = 0, lbReturn = null;
 
@@ -548,7 +550,7 @@
     $("#viewerTitle", lb).textContent = p.caption;
     $(".viewer__date", lb).textContent = p.date;
     lb.classList.toggle("is-single", n < 2);
-    $(".viewer__thumbs", lb).innerHTML = n < 2 ? "" : p.list.map((src, k) => `<button type="button" class="viewer__thumb" data-idx="${k}" aria-label="${k + 1}번째 사진">${src ? `<img src="${esc(src)}" alt="" loading="lazy">` : `<svg><use href="#i-image"/></svg>`}</button>`).join("");
+    $(".viewer__thumbs", lb).innerHTML = n < 2 ? "" : p.list.map((src, k) => `<button type="button" class="viewer__thumb" data-idx="${k}" aria-label="${k + 1}번째 사진">${src ? `<img src="${esc(thumbOf(src))}" alt="" loading="lazy" decoding="async">` : `<svg><use href="#i-image"/></svg>`}</button>`).join("");
     lb.hidden = false;
     document.body.style.overflow = "hidden";
     showPhoto(0);
